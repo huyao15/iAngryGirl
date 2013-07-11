@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "weixin/WXApi.h"
 
-@interface XLQAppDelegate : UIResponder <UIApplicationDelegate>
+@interface XLQAppDelegate : UIResponder <UIApplicationDelegate, WXApiDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

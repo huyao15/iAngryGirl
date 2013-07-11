@@ -16,10 +16,34 @@
 		05453E4C1786EB14007F7F72 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 05453E4B1786EB14007F7F72 /* Default.png */; };
 		05453E4E1786EB14007F7F72 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 05453E4D1786EB14007F7F72 /* Default@2x.png */; };
 		05453E501786EB14007F7F72 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 05453E4F1786EB14007F7F72 /* Default-568h@2x.png */; };
+		05453E581786EB49007F7F72 /* XLQMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05453E571786EB49007F7F72 /* XLQMainController.m */; };
+		05453E611786ED55007F7F72 /* angry.gif in Resources */ = {isa = PBXBuildFile; fileRef = 05453E5A1786ED55007F7F72 /* angry.gif */; };
+		05453E621786ED55007F7F72 /* bg_click_here.png in Resources */ = {isa = PBXBuildFile; fileRef = 05453E5B1786ED55007F7F72 /* bg_click_here.png */; };
+		05453E631786ED55007F7F72 /* button_next.png in Resources */ = {isa = PBXBuildFile; fileRef = 05453E5C1786ED55007F7F72 /* button_next.png */; };
+		05453E641786ED55007F7F72 /* button_pre.png in Resources */ = {isa = PBXBuildFile; fileRef = 05453E5D1786ED55007F7F72 /* button_pre.png */; };
+		05453E651786ED55007F7F72 /* happy.gif in Resources */ = {isa = PBXBuildFile; fileRef = 05453E5E1786ED55007F7F72 /* happy.gif */; };
+		05453E661786ED55007F7F72 /* sad.gif in Resources */ = {isa = PBXBuildFile; fileRef = 05453E5F1786ED55007F7F72 /* sad.gif */; };
+		05453E671786ED55007F7F72 /* share_to_time_line_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 05453E601786ED55007F7F72 /* share_to_time_line_icon.png */; };
+		05453E6B1786ED81007F7F72 /* XLQCalendarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 05453E6A1786ED81007F7F72 /* XLQCalendarCell.m */; };
+		05453E6E1786F136007F7F72 /* XLQWeekButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 05453E6D1786F136007F7F72 /* XLQWeekButton.m */; };
+		05453E711786F4B9007F7F72 /* XLQDayButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 05453E701786F4B9007F7F72 /* XLQDayButton.m */; };
+		05453E751786F7DD007F7F72 /* XLQDayData.m in Sources */ = {isa = PBXBuildFile; fileRef = 05453E741786F7DD007F7F72 /* XLQDayData.m */; };
+		05453E781786F905007F7F72 /* XLQMood.m in Sources */ = {isa = PBXBuildFile; fileRef = 05453E771786F905007F7F72 /* XLQMood.m */; };
+		05453E7B1786FC8D007F7F72 /* XLQCalendarData.m in Sources */ = {isa = PBXBuildFile; fileRef = 05453E7A1786FC8D007F7F72 /* XLQCalendarData.m */; };
+		05453E8917871486007F7F72 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 05453E7F17871486007F7F72 /* FMDatabase.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		05453E8A17871486007F7F72 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 05453E8117871486007F7F72 /* FMDatabaseAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		05453E8B17871486007F7F72 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 05453E8317871486007F7F72 /* FMDatabasePool.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		05453E8C17871486007F7F72 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 05453E8517871486007F7F72 /* FMDatabaseQueue.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		05453E8E17871486007F7F72 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 05453E8817871486007F7F72 /* FMResultSet.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		05453E91178715B3007F7F72 /* XLQDataBaseUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 05453E90178715B3007F7F72 /* XLQDataBaseUtil.m */; };
+		05453E94178715FF007F7F72 /* XLQMoodDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 05453E93178715FF007F7F72 /* XLQMoodDAO.m */; };
+		05453E9617871B98007F7F72 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 05453E9517871B98007F7F72 /* libsqlite3.dylib */; };
+		05453E9B1787BFA2007F7F72 /* libWeChatSDK_armv7_armv7s.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05453E981787BFA2007F7F72 /* libWeChatSDK_armv7_armv7s.a */; };
+		0552DE4B178C6E2A000A015E /* emot-15.png in Resources */ = {isa = PBXBuildFile; fileRef = 0552DE4A178C6E2A000A015E /* emot-15.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		05453E361786EB14007F7F72 /* AngryGirl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AngryGirl.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		05453E361786EB14007F7F72 /* 老婆的心情.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "老婆的心情.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		05453E391786EB14007F7F72 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		05453E3B1786EB14007F7F72 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		05453E3D1786EB14007F7F72 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -32,6 +56,46 @@
 		05453E4B1786EB14007F7F72 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		05453E4D1786EB14007F7F72 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		05453E4F1786EB14007F7F72 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		05453E561786EB49007F7F72 /* XLQMainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLQMainController.h; sourceTree = "<group>"; };
+		05453E571786EB49007F7F72 /* XLQMainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLQMainController.m; sourceTree = "<group>"; };
+		05453E5A1786ED55007F7F72 /* angry.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = angry.gif; sourceTree = "<group>"; };
+		05453E5B1786ED55007F7F72 /* bg_click_here.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_click_here.png; sourceTree = "<group>"; };
+		05453E5C1786ED55007F7F72 /* button_next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_next.png; sourceTree = "<group>"; };
+		05453E5D1786ED55007F7F72 /* button_pre.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_pre.png; sourceTree = "<group>"; };
+		05453E5E1786ED55007F7F72 /* happy.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = happy.gif; sourceTree = "<group>"; };
+		05453E5F1786ED55007F7F72 /* sad.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = sad.gif; sourceTree = "<group>"; };
+		05453E601786ED55007F7F72 /* share_to_time_line_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share_to_time_line_icon.png; sourceTree = "<group>"; };
+		05453E691786ED81007F7F72 /* XLQCalendarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLQCalendarCell.h; sourceTree = "<group>"; };
+		05453E6A1786ED81007F7F72 /* XLQCalendarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLQCalendarCell.m; sourceTree = "<group>"; };
+		05453E6C1786F136007F7F72 /* XLQWeekButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLQWeekButton.h; sourceTree = "<group>"; };
+		05453E6D1786F136007F7F72 /* XLQWeekButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLQWeekButton.m; sourceTree = "<group>"; };
+		05453E6F1786F4B9007F7F72 /* XLQDayButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLQDayButton.h; sourceTree = "<group>"; };
+		05453E701786F4B9007F7F72 /* XLQDayButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLQDayButton.m; sourceTree = "<group>"; };
+		05453E731786F7DD007F7F72 /* XLQDayData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLQDayData.h; sourceTree = "<group>"; };
+		05453E741786F7DD007F7F72 /* XLQDayData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLQDayData.m; sourceTree = "<group>"; };
+		05453E761786F905007F7F72 /* XLQMood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLQMood.h; sourceTree = "<group>"; };
+		05453E771786F905007F7F72 /* XLQMood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLQMood.m; sourceTree = "<group>"; };
+		05453E791786FC8D007F7F72 /* XLQCalendarData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLQCalendarData.h; sourceTree = "<group>"; };
+		05453E7A1786FC8D007F7F72 /* XLQCalendarData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLQCalendarData.m; sourceTree = "<group>"; };
+		05453E7E17871486007F7F72 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		05453E7F17871486007F7F72 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		05453E8017871486007F7F72 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		05453E8117871486007F7F72 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		05453E8217871486007F7F72 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		05453E8317871486007F7F72 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		05453E8417871486007F7F72 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		05453E8517871486007F7F72 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		05453E8717871486007F7F72 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		05453E8817871486007F7F72 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		05453E8F178715B3007F7F72 /* XLQDataBaseUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLQDataBaseUtil.h; sourceTree = "<group>"; };
+		05453E90178715B3007F7F72 /* XLQDataBaseUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLQDataBaseUtil.m; sourceTree = "<group>"; };
+		05453E92178715FF007F7F72 /* XLQMoodDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLQMoodDAO.h; sourceTree = "<group>"; };
+		05453E93178715FF007F7F72 /* XLQMoodDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLQMoodDAO.m; sourceTree = "<group>"; };
+		05453E9517871B98007F7F72 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		05453E981787BFA2007F7F72 /* libWeChatSDK_armv7_armv7s.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK_armv7_armv7s.a; sourceTree = "<group>"; };
+		05453E991787BFA2007F7F72 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
+		05453E9A1787BFA2007F7F72 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		0552DE4A178C6E2A000A015E /* emot-15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "emot-15.png"; path = "../../emot-15.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,9 +103,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05453E9617871B98007F7F72 /* libsqlite3.dylib in Frameworks */,
 				05453E3A1786EB14007F7F72 /* UIKit.framework in Frameworks */,
 				05453E3C1786EB14007F7F72 /* Foundation.framework in Frameworks */,
 				05453E3E1786EB14007F7F72 /* CoreGraphics.framework in Frameworks */,
+				05453E9B1787BFA2007F7F72 /* libWeChatSDK_armv7_armv7s.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,7 +126,7 @@
 		05453E371786EB14007F7F72 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				05453E361786EB14007F7F72 /* AngryGirl.app */,
+				05453E361786EB14007F7F72 /* 老婆的心情.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -68,6 +134,7 @@
 		05453E381786EB14007F7F72 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				05453E9517871B98007F7F72 /* libsqlite3.dylib */,
 				05453E391786EB14007F7F72 /* UIKit.framework */,
 				05453E3B1786EB14007F7F72 /* Foundation.framework */,
 				05453E3D1786EB14007F7F72 /* CoreGraphics.framework */,
@@ -78,8 +145,16 @@
 		05453E3F1786EB14007F7F72 /* AngryGirl */ = {
 			isa = PBXGroup;
 			children = (
+				05453E971787BFA2007F7F72 /* weixin */,
+				05453E7D17871486007F7F72 /* FMDB */,
+				05453E7C178713E8007F7F72 /* dao */,
+				05453E721786F7BC007F7F72 /* model */,
+				05453E681786ED5C007F7F72 /* view */,
+				05453E591786ED55007F7F72 /* image */,
 				05453E481786EB14007F7F72 /* XLQAppDelegate.h */,
 				05453E491786EB14007F7F72 /* XLQAppDelegate.m */,
+				05453E561786EB49007F7F72 /* XLQMainController.h */,
+				05453E571786EB49007F7F72 /* XLQMainController.m */,
 				05453E401786EB14007F7F72 /* Supporting Files */,
 			);
 			path = AngryGirl;
@@ -99,6 +174,85 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		05453E591786ED55007F7F72 /* image */ = {
+			isa = PBXGroup;
+			children = (
+				0552DE4A178C6E2A000A015E /* emot-15.png */,
+				05453E5A1786ED55007F7F72 /* angry.gif */,
+				05453E5B1786ED55007F7F72 /* bg_click_here.png */,
+				05453E5C1786ED55007F7F72 /* button_next.png */,
+				05453E5D1786ED55007F7F72 /* button_pre.png */,
+				05453E5E1786ED55007F7F72 /* happy.gif */,
+				05453E5F1786ED55007F7F72 /* sad.gif */,
+				05453E601786ED55007F7F72 /* share_to_time_line_icon.png */,
+			);
+			path = image;
+			sourceTree = "<group>";
+		};
+		05453E681786ED5C007F7F72 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				05453E691786ED81007F7F72 /* XLQCalendarCell.h */,
+				05453E6A1786ED81007F7F72 /* XLQCalendarCell.m */,
+				05453E6C1786F136007F7F72 /* XLQWeekButton.h */,
+				05453E6D1786F136007F7F72 /* XLQWeekButton.m */,
+				05453E6F1786F4B9007F7F72 /* XLQDayButton.h */,
+				05453E701786F4B9007F7F72 /* XLQDayButton.m */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		05453E721786F7BC007F7F72 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				05453E731786F7DD007F7F72 /* XLQDayData.h */,
+				05453E741786F7DD007F7F72 /* XLQDayData.m */,
+				05453E761786F905007F7F72 /* XLQMood.h */,
+				05453E771786F905007F7F72 /* XLQMood.m */,
+				05453E791786FC8D007F7F72 /* XLQCalendarData.h */,
+				05453E7A1786FC8D007F7F72 /* XLQCalendarData.m */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		05453E7C178713E8007F7F72 /* dao */ = {
+			isa = PBXGroup;
+			children = (
+				05453E92178715FF007F7F72 /* XLQMoodDAO.h */,
+				05453E93178715FF007F7F72 /* XLQMoodDAO.m */,
+				05453E8F178715B3007F7F72 /* XLQDataBaseUtil.h */,
+				05453E90178715B3007F7F72 /* XLQDataBaseUtil.m */,
+			);
+			name = dao;
+			sourceTree = "<group>";
+		};
+		05453E7D17871486007F7F72 /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				05453E7E17871486007F7F72 /* FMDatabase.h */,
+				05453E7F17871486007F7F72 /* FMDatabase.m */,
+				05453E8017871486007F7F72 /* FMDatabaseAdditions.h */,
+				05453E8117871486007F7F72 /* FMDatabaseAdditions.m */,
+				05453E8217871486007F7F72 /* FMDatabasePool.h */,
+				05453E8317871486007F7F72 /* FMDatabasePool.m */,
+				05453E8417871486007F7F72 /* FMDatabaseQueue.h */,
+				05453E8517871486007F7F72 /* FMDatabaseQueue.m */,
+				05453E8717871486007F7F72 /* FMResultSet.h */,
+				05453E8817871486007F7F72 /* FMResultSet.m */,
+			);
+			path = FMDB;
+			sourceTree = "<group>";
+		};
+		05453E971787BFA2007F7F72 /* weixin */ = {
+			isa = PBXGroup;
+			children = (
+				05453E981787BFA2007F7F72 /* libWeChatSDK_armv7_armv7s.a */,
+				05453E991787BFA2007F7F72 /* WXApi.h */,
+				05453E9A1787BFA2007F7F72 /* WXApiObject.h */,
+			);
+			path = weixin;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -116,7 +270,7 @@
 			);
 			name = AngryGirl;
 			productName = AngryGirl;
-			productReference = 05453E361786EB14007F7F72 /* AngryGirl.app */;
+			productReference = 05453E361786EB14007F7F72 /* 老婆的心情.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -155,6 +309,14 @@
 				05453E4C1786EB14007F7F72 /* Default.png in Resources */,
 				05453E4E1786EB14007F7F72 /* Default@2x.png in Resources */,
 				05453E501786EB14007F7F72 /* Default-568h@2x.png in Resources */,
+				05453E611786ED55007F7F72 /* angry.gif in Resources */,
+				05453E621786ED55007F7F72 /* bg_click_here.png in Resources */,
+				05453E631786ED55007F7F72 /* button_next.png in Resources */,
+				05453E641786ED55007F7F72 /* button_pre.png in Resources */,
+				05453E651786ED55007F7F72 /* happy.gif in Resources */,
+				05453E661786ED55007F7F72 /* sad.gif in Resources */,
+				05453E671786ED55007F7F72 /* share_to_time_line_icon.png in Resources */,
+				0552DE4B178C6E2A000A015E /* emot-15.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,6 +329,20 @@
 			files = (
 				05453E461786EB14007F7F72 /* main.m in Sources */,
 				05453E4A1786EB14007F7F72 /* XLQAppDelegate.m in Sources */,
+				05453E581786EB49007F7F72 /* XLQMainController.m in Sources */,
+				05453E6B1786ED81007F7F72 /* XLQCalendarCell.m in Sources */,
+				05453E6E1786F136007F7F72 /* XLQWeekButton.m in Sources */,
+				05453E711786F4B9007F7F72 /* XLQDayButton.m in Sources */,
+				05453E751786F7DD007F7F72 /* XLQDayData.m in Sources */,
+				05453E781786F905007F7F72 /* XLQMood.m in Sources */,
+				05453E7B1786FC8D007F7F72 /* XLQCalendarData.m in Sources */,
+				05453E8917871486007F7F72 /* FMDatabase.m in Sources */,
+				05453E8A17871486007F7F72 /* FMDatabaseAdditions.m in Sources */,
+				05453E8B17871486007F7F72 /* FMDatabasePool.m in Sources */,
+				05453E8C17871486007F7F72 /* FMDatabaseQueue.m in Sources */,
+				05453E8E17871486007F7F72 /* FMResultSet.m in Sources */,
+				05453E91178715B3007F7F72 /* XLQDataBaseUtil.m in Sources */,
+				05453E94178715FF007F7F72 /* XLQMoodDAO.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,7 +372,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: yao hu (KKUB8KB86F)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: yao hu (KKUB8KB86F)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -211,6 +388,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "4EE93673-FED9-409B-9AC6-B6C0A56A5CDA";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4EE93673-FED9-409B-9AC6-B6C0A56A5CDA";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -227,7 +406,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: yao hu (KKUB8KB86F)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: yao hu (KKUB8KB86F)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -235,6 +415,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "4EE93673-FED9-409B-9AC6-B6C0A56A5CDA";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4EE93673-FED9-409B-9AC6-B6C0A56A5CDA";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -246,7 +428,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AngryGirl/AngryGirl-Prefix.pch";
 				INFOPLIST_FILE = "AngryGirl/AngryGirl-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/AngryGirl/weixin\"",
+				);
+				PRODUCT_NAME = "老婆的心情";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -257,7 +443,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AngryGirl/AngryGirl-Prefix.pch";
 				INFOPLIST_FILE = "AngryGirl/AngryGirl-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/AngryGirl/weixin\"",
+				);
+				PRODUCT_NAME = "老婆的心情";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -281,6 +471,7 @@
 				05453E551786EB14007F7F72 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

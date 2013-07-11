@@ -7,6 +7,8 @@
 //
 
 #import "XLQAppDelegate.h"
+#import "XLQMainController.h"
+#import "XLQDataBaseUtil.h"
 
 @implementation XLQAppDelegate
 
@@ -15,8 +17,28 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    
+    BOOL b = [WXApi registerApp:@"wx62b2217684d2e7be"];
+    if (!b) {
+        NSLog(@"RegisterApp Error");
+    }
+    
+    XLQMainController *mainController = [[XLQMainController alloc] init];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:mainController];
+    self.window.rootViewController = navController;
+    
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
+    return [WXApi handleOpenURL:url delegate:self];
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    return [WXApi handleOpenURL:url delegate:self];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
