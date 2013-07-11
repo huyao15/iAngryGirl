@@ -10,6 +10,7 @@
 #import "XLQCalendarCell.h"
 #import "XLQCalendarData.h"
 #import "WXApi.h"
+#import "XLQMobClickUtil.h"
 
 #import <QuartzCore/QuartzCore.h>
 
@@ -91,6 +92,7 @@
 
 - (void) sendImageContent
 {
+    [XLQMobClickUtil click:@"share_to_pengyouquan_click"];
     UIGraphicsBeginImageContext(self.navigationController.view.bounds.size);
     [self.navigationController.view.layer renderInContext:UIGraphicsGetCurrentContext()];
     UIImage *image= UIGraphicsGetImageFromCurrentImageContext();

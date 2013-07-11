@@ -8,6 +8,7 @@
 
 #import "XLQDayButton.h"
 #import "XLQMoodDAO.h"
+#import "XLQMobClickUtil.h"
 
 @implementation XLQDayButton
 
@@ -43,6 +44,7 @@
 
 -(void)onClick
 {
+    [XLQMobClickUtil click:@"set_mood_click"];
     XLQMood *mood = [XLQMood getMoodByIndex:(self.data.mood.index+1)%[XLQMood getMoodCount]];
     self.data.mood = mood;
     self.data.updatedTime = [NSDate date];
