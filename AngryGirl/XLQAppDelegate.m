@@ -9,6 +9,7 @@
 #import "XLQAppDelegate.h"
 #import "XLQMainController.h"
 #import "XLQDataBaseUtil.h"
+#import "XLQMobClickUtil.h"
 
 @implementation XLQAppDelegate
 
@@ -22,6 +23,7 @@
     if (!b) {
         NSLog(@"RegisterApp Error");
     }
+    [XLQMobClickUtil start];
     
     XLQMainController *mainController = [[XLQMainController alloc] init];
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:mainController];

@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05212FA5178ED1FA00667E58 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 05212F94178ED1FA00667E58 /* FMDatabase.m */; };
+		05212FA6178ED1FA00667E58 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 05212F96178ED1FA00667E58 /* FMDatabaseAdditions.m */; };
+		05212FA7178ED1FA00667E58 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 05212F98178ED1FA00667E58 /* FMDatabasePool.m */; };
+		05212FA8178ED1FA00667E58 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 05212F9A178ED1FA00667E58 /* FMDatabaseQueue.m */; };
+		05212FAA178ED1FA00667E58 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 05212F9D178ED1FA00667E58 /* FMResultSet.m */; };
+		05212FAB178ED1FA00667E58 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05212F9F178ED1FA00667E58 /* libMobClickLibrary.a */; };
+		05212FAC178ED1FA00667E58 /* libWeChatSDK_armv7_armv7s.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05212FA2178ED1FA00667E58 /* libWeChatSDK_armv7_armv7s.a */; };
+		05212FAF178ED21E00667E58 /* XLQMobClickUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 05212FAE178ED21E00667E58 /* XLQMobClickUtil.m */; };
+		05212FB1178ED2BC00667E58 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 05212FB0178ED2BC00667E58 /* libz.dylib */; };
 		05453E3A1786EB14007F7F72 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05453E391786EB14007F7F72 /* UIKit.framework */; };
 		05453E3C1786EB14007F7F72 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05453E3B1786EB14007F7F72 /* Foundation.framework */; };
 		05453E3E1786EB14007F7F72 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05453E3D1786EB14007F7F72 /* CoreGraphics.framework */; };
@@ -30,19 +39,31 @@
 		05453E751786F7DD007F7F72 /* XLQDayData.m in Sources */ = {isa = PBXBuildFile; fileRef = 05453E741786F7DD007F7F72 /* XLQDayData.m */; };
 		05453E781786F905007F7F72 /* XLQMood.m in Sources */ = {isa = PBXBuildFile; fileRef = 05453E771786F905007F7F72 /* XLQMood.m */; };
 		05453E7B1786FC8D007F7F72 /* XLQCalendarData.m in Sources */ = {isa = PBXBuildFile; fileRef = 05453E7A1786FC8D007F7F72 /* XLQCalendarData.m */; };
-		05453E8917871486007F7F72 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 05453E7F17871486007F7F72 /* FMDatabase.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		05453E8A17871486007F7F72 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 05453E8117871486007F7F72 /* FMDatabaseAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		05453E8B17871486007F7F72 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 05453E8317871486007F7F72 /* FMDatabasePool.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		05453E8C17871486007F7F72 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 05453E8517871486007F7F72 /* FMDatabaseQueue.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		05453E8E17871486007F7F72 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 05453E8817871486007F7F72 /* FMResultSet.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		05453E91178715B3007F7F72 /* XLQDataBaseUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 05453E90178715B3007F7F72 /* XLQDataBaseUtil.m */; };
 		05453E94178715FF007F7F72 /* XLQMoodDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 05453E93178715FF007F7F72 /* XLQMoodDAO.m */; };
 		05453E9617871B98007F7F72 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 05453E9517871B98007F7F72 /* libsqlite3.dylib */; };
-		05453E9B1787BFA2007F7F72 /* libWeChatSDK_armv7_armv7s.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05453E981787BFA2007F7F72 /* libWeChatSDK_armv7_armv7s.a */; };
 		0552DE4B178C6E2A000A015E /* emot-15.png in Resources */ = {isa = PBXBuildFile; fileRef = 0552DE4A178C6E2A000A015E /* emot-15.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		05212F93178ED1FA00667E58 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		05212F94178ED1FA00667E58 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		05212F95178ED1FA00667E58 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		05212F96178ED1FA00667E58 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		05212F97178ED1FA00667E58 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		05212F98178ED1FA00667E58 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		05212F99178ED1FA00667E58 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		05212F9A178ED1FA00667E58 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		05212F9C178ED1FA00667E58 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		05212F9D178ED1FA00667E58 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		05212F9F178ED1FA00667E58 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
+		05212FA0178ED1FA00667E58 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
+		05212FA2178ED1FA00667E58 /* libWeChatSDK_armv7_armv7s.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK_armv7_armv7s.a; sourceTree = "<group>"; };
+		05212FA3178ED1FA00667E58 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
+		05212FA4178ED1FA00667E58 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		05212FAD178ED21E00667E58 /* XLQMobClickUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XLQMobClickUtil.h; path = AngryGirl/XLQMobClickUtil.h; sourceTree = SOURCE_ROOT; };
+		05212FAE178ED21E00667E58 /* XLQMobClickUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XLQMobClickUtil.m; path = AngryGirl/XLQMobClickUtil.m; sourceTree = SOURCE_ROOT; };
+		05212FB0178ED2BC00667E58 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		05453E361786EB14007F7F72 /* 老婆的心情.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "老婆的心情.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		05453E391786EB14007F7F72 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		05453E3B1786EB14007F7F72 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -77,24 +98,11 @@
 		05453E771786F905007F7F72 /* XLQMood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLQMood.m; sourceTree = "<group>"; };
 		05453E791786FC8D007F7F72 /* XLQCalendarData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLQCalendarData.h; sourceTree = "<group>"; };
 		05453E7A1786FC8D007F7F72 /* XLQCalendarData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLQCalendarData.m; sourceTree = "<group>"; };
-		05453E7E17871486007F7F72 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
-		05453E7F17871486007F7F72 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
-		05453E8017871486007F7F72 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
-		05453E8117871486007F7F72 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
-		05453E8217871486007F7F72 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
-		05453E8317871486007F7F72 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
-		05453E8417871486007F7F72 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
-		05453E8517871486007F7F72 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
-		05453E8717871486007F7F72 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
-		05453E8817871486007F7F72 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		05453E8F178715B3007F7F72 /* XLQDataBaseUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLQDataBaseUtil.h; sourceTree = "<group>"; };
 		05453E90178715B3007F7F72 /* XLQDataBaseUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLQDataBaseUtil.m; sourceTree = "<group>"; };
 		05453E92178715FF007F7F72 /* XLQMoodDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLQMoodDAO.h; sourceTree = "<group>"; };
 		05453E93178715FF007F7F72 /* XLQMoodDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLQMoodDAO.m; sourceTree = "<group>"; };
 		05453E9517871B98007F7F72 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		05453E981787BFA2007F7F72 /* libWeChatSDK_armv7_armv7s.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK_armv7_armv7s.a; sourceTree = "<group>"; };
-		05453E991787BFA2007F7F72 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
-		05453E9A1787BFA2007F7F72 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
 		0552DE4A178C6E2A000A015E /* emot-15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "emot-15.png"; path = "../../emot-15.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,17 +111,65 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05212FB1178ED2BC00667E58 /* libz.dylib in Frameworks */,
 				05453E9617871B98007F7F72 /* libsqlite3.dylib in Frameworks */,
 				05453E3A1786EB14007F7F72 /* UIKit.framework in Frameworks */,
 				05453E3C1786EB14007F7F72 /* Foundation.framework in Frameworks */,
 				05453E3E1786EB14007F7F72 /* CoreGraphics.framework in Frameworks */,
-				05453E9B1787BFA2007F7F72 /* libWeChatSDK_armv7_armv7s.a in Frameworks */,
+				05212FAB178ED1FA00667E58 /* libMobClickLibrary.a in Frameworks */,
+				05212FAC178ED1FA00667E58 /* libWeChatSDK_armv7_armv7s.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05212F91178ED1FA00667E58 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				05212F92178ED1FA00667E58 /* FMDB */,
+				05212F9E178ED1FA00667E58 /* umeng */,
+				05212FA1178ED1FA00667E58 /* weixin */,
+			);
+			path = lib;
+			sourceTree = SOURCE_ROOT;
+		};
+		05212F92178ED1FA00667E58 /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				05212F93178ED1FA00667E58 /* FMDatabase.h */,
+				05212F94178ED1FA00667E58 /* FMDatabase.m */,
+				05212F95178ED1FA00667E58 /* FMDatabaseAdditions.h */,
+				05212F96178ED1FA00667E58 /* FMDatabaseAdditions.m */,
+				05212F97178ED1FA00667E58 /* FMDatabasePool.h */,
+				05212F98178ED1FA00667E58 /* FMDatabasePool.m */,
+				05212F99178ED1FA00667E58 /* FMDatabaseQueue.h */,
+				05212F9A178ED1FA00667E58 /* FMDatabaseQueue.m */,
+				05212F9C178ED1FA00667E58 /* FMResultSet.h */,
+				05212F9D178ED1FA00667E58 /* FMResultSet.m */,
+			);
+			path = FMDB;
+			sourceTree = "<group>";
+		};
+		05212F9E178ED1FA00667E58 /* umeng */ = {
+			isa = PBXGroup;
+			children = (
+				05212F9F178ED1FA00667E58 /* libMobClickLibrary.a */,
+				05212FA0178ED1FA00667E58 /* MobClick.h */,
+			);
+			path = umeng;
+			sourceTree = "<group>";
+		};
+		05212FA1178ED1FA00667E58 /* weixin */ = {
+			isa = PBXGroup;
+			children = (
+				05212FA2178ED1FA00667E58 /* libWeChatSDK_armv7_armv7s.a */,
+				05212FA3178ED1FA00667E58 /* WXApi.h */,
+				05212FA4178ED1FA00667E58 /* WXApiObject.h */,
+			);
+			path = weixin;
+			sourceTree = "<group>";
+		};
 		05453E2D1786EB14007F7F72 = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +190,7 @@
 		05453E381786EB14007F7F72 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				05212FB0178ED2BC00667E58 /* libz.dylib */,
 				05453E9517871B98007F7F72 /* libsqlite3.dylib */,
 				05453E391786EB14007F7F72 /* UIKit.framework */,
 				05453E3B1786EB14007F7F72 /* Foundation.framework */,
@@ -145,8 +202,7 @@
 		05453E3F1786EB14007F7F72 /* AngryGirl */ = {
 			isa = PBXGroup;
 			children = (
-				05453E971787BFA2007F7F72 /* weixin */,
-				05453E7D17871486007F7F72 /* FMDB */,
+				05212F91178ED1FA00667E58 /* lib */,
 				05453E7C178713E8007F7F72 /* dao */,
 				05453E721786F7BC007F7F72 /* model */,
 				05453E681786ED5C007F7F72 /* view */,
@@ -155,6 +211,8 @@
 				05453E491786EB14007F7F72 /* XLQAppDelegate.m */,
 				05453E561786EB49007F7F72 /* XLQMainController.h */,
 				05453E571786EB49007F7F72 /* XLQMainController.m */,
+				05212FAD178ED21E00667E58 /* XLQMobClickUtil.h */,
+				05212FAE178ED21E00667E58 /* XLQMobClickUtil.m */,
 				05453E401786EB14007F7F72 /* Supporting Files */,
 			);
 			path = AngryGirl;
@@ -224,33 +282,6 @@
 				05453E90178715B3007F7F72 /* XLQDataBaseUtil.m */,
 			);
 			name = dao;
-			sourceTree = "<group>";
-		};
-		05453E7D17871486007F7F72 /* FMDB */ = {
-			isa = PBXGroup;
-			children = (
-				05453E7E17871486007F7F72 /* FMDatabase.h */,
-				05453E7F17871486007F7F72 /* FMDatabase.m */,
-				05453E8017871486007F7F72 /* FMDatabaseAdditions.h */,
-				05453E8117871486007F7F72 /* FMDatabaseAdditions.m */,
-				05453E8217871486007F7F72 /* FMDatabasePool.h */,
-				05453E8317871486007F7F72 /* FMDatabasePool.m */,
-				05453E8417871486007F7F72 /* FMDatabaseQueue.h */,
-				05453E8517871486007F7F72 /* FMDatabaseQueue.m */,
-				05453E8717871486007F7F72 /* FMResultSet.h */,
-				05453E8817871486007F7F72 /* FMResultSet.m */,
-			);
-			path = FMDB;
-			sourceTree = "<group>";
-		};
-		05453E971787BFA2007F7F72 /* weixin */ = {
-			isa = PBXGroup;
-			children = (
-				05453E981787BFA2007F7F72 /* libWeChatSDK_armv7_armv7s.a */,
-				05453E991787BFA2007F7F72 /* WXApi.h */,
-				05453E9A1787BFA2007F7F72 /* WXApiObject.h */,
-			);
-			path = weixin;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -336,13 +367,14 @@
 				05453E751786F7DD007F7F72 /* XLQDayData.m in Sources */,
 				05453E781786F905007F7F72 /* XLQMood.m in Sources */,
 				05453E7B1786FC8D007F7F72 /* XLQCalendarData.m in Sources */,
-				05453E8917871486007F7F72 /* FMDatabase.m in Sources */,
-				05453E8A17871486007F7F72 /* FMDatabaseAdditions.m in Sources */,
-				05453E8B17871486007F7F72 /* FMDatabasePool.m in Sources */,
-				05453E8C17871486007F7F72 /* FMDatabaseQueue.m in Sources */,
-				05453E8E17871486007F7F72 /* FMResultSet.m in Sources */,
 				05453E91178715B3007F7F72 /* XLQDataBaseUtil.m in Sources */,
 				05453E94178715FF007F7F72 /* XLQMoodDAO.m in Sources */,
+				05212FA5178ED1FA00667E58 /* FMDatabase.m in Sources */,
+				05212FA6178ED1FA00667E58 /* FMDatabaseAdditions.m in Sources */,
+				05212FA7178ED1FA00667E58 /* FMDatabasePool.m in Sources */,
+				05212FA8178ED1FA00667E58 /* FMDatabaseQueue.m in Sources */,
+				05212FAA178ED1FA00667E58 /* FMResultSet.m in Sources */,
+				05212FAF178ED21E00667E58 /* XLQMobClickUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,6 +463,8 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/AngryGirl/weixin\"",
+					"\"$(SRCROOT)/lib/umeng\"",
+					"\"$(SRCROOT)/lib/weixin\"",
 				);
 				PRODUCT_NAME = "老婆的心情";
 				WRAPPER_EXTENSION = app;
@@ -446,6 +480,8 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/AngryGirl/weixin\"",
+					"\"$(SRCROOT)/lib/umeng\"",
+					"\"$(SRCROOT)/lib/weixin\"",
 				);
 				PRODUCT_NAME = "老婆的心情";
 				WRAPPER_EXTENSION = app;

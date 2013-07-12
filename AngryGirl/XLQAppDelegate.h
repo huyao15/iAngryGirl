@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "weixin/WXApi.h"
+#import "WXApi.h"
 
 @interface XLQAppDelegate : UIResponder <UIApplicationDelegate, WXApiDelegate>
 
