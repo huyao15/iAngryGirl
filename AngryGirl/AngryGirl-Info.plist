@@ -14,7 +14,9 @@
 		<dict>
 			<key>CFBundleIconFiles</key>
 			<array>
-				<string>emot-15.png</string>
+				<string>emot.png</string>
+				<string>emot.png</string>
+				<string>emot@2x.png</string>
 			</array>
 			<key>UIPrerenderedIcon</key>
 			<true/>

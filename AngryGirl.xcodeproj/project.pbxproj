@@ -42,7 +42,8 @@
 		05453E91178715B3007F7F72 /* XLQDataBaseUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 05453E90178715B3007F7F72 /* XLQDataBaseUtil.m */; };
 		05453E94178715FF007F7F72 /* XLQMoodDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 05453E93178715FF007F7F72 /* XLQMoodDAO.m */; };
 		05453E9617871B98007F7F72 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 05453E9517871B98007F7F72 /* libsqlite3.dylib */; };
-		0552DE4B178C6E2A000A015E /* emot-15.png in Resources */ = {isa = PBXBuildFile; fileRef = 0552DE4A178C6E2A000A015E /* emot-15.png */; };
+		056B41FD178F96F100BA796E /* emot.png in Resources */ = {isa = PBXBuildFile; fileRef = 056B41FC178F96F100BA796E /* emot.png */; };
+		056B41FF178F978100BA796E /* emot@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 056B41FE178F978100BA796E /* emot@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,7 +65,7 @@
 		05212FAD178ED21E00667E58 /* XLQMobClickUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XLQMobClickUtil.h; path = AngryGirl/XLQMobClickUtil.h; sourceTree = SOURCE_ROOT; };
 		05212FAE178ED21E00667E58 /* XLQMobClickUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XLQMobClickUtil.m; path = AngryGirl/XLQMobClickUtil.m; sourceTree = SOURCE_ROOT; };
 		05212FB0178ED2BC00667E58 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		05453E361786EB14007F7F72 /* 老婆的心情.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "老婆的心情.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		05453E361786EB14007F7F72 /* AngryGirl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AngryGirl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05453E391786EB14007F7F72 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		05453E3B1786EB14007F7F72 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		05453E3D1786EB14007F7F72 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -103,7 +104,8 @@
 		05453E92178715FF007F7F72 /* XLQMoodDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLQMoodDAO.h; sourceTree = "<group>"; };
 		05453E93178715FF007F7F72 /* XLQMoodDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLQMoodDAO.m; sourceTree = "<group>"; };
 		05453E9517871B98007F7F72 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		0552DE4A178C6E2A000A015E /* emot-15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "emot-15.png"; path = "../../emot-15.png"; sourceTree = "<group>"; };
+		056B41FC178F96F100BA796E /* emot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = emot.png; path = ../../emot.png; sourceTree = "<group>"; };
+		056B41FE178F978100BA796E /* emot@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "emot@2x.png"; path = "../../emot@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,7 +184,7 @@
 		05453E371786EB14007F7F72 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				05453E361786EB14007F7F72 /* 老婆的心情.app */,
+				05453E361786EB14007F7F72 /* AngryGirl.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -235,7 +237,8 @@
 		05453E591786ED55007F7F72 /* image */ = {
 			isa = PBXGroup;
 			children = (
-				0552DE4A178C6E2A000A015E /* emot-15.png */,
+				056B41FE178F978100BA796E /* emot@2x.png */,
+				056B41FC178F96F100BA796E /* emot.png */,
 				05453E5A1786ED55007F7F72 /* angry.gif */,
 				05453E5B1786ED55007F7F72 /* bg_click_here.png */,
 				05453E5C1786ED55007F7F72 /* button_next.png */,
@@ -301,7 +304,7 @@
 			);
 			name = AngryGirl;
 			productName = AngryGirl;
-			productReference = 05453E361786EB14007F7F72 /* 老婆的心情.app */;
+			productReference = 05453E361786EB14007F7F72 /* AngryGirl.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -347,7 +350,8 @@
 				05453E651786ED55007F7F72 /* happy.gif in Resources */,
 				05453E661786ED55007F7F72 /* sad.gif in Resources */,
 				05453E671786ED55007F7F72 /* share_to_time_line_icon.png in Resources */,
-				0552DE4B178C6E2A000A015E /* emot-15.png in Resources */,
+				056B41FD178F96F100BA796E /* emot.png in Resources */,
+				056B41FF178F978100BA796E /* emot@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,8 +424,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "4EE93673-FED9-409B-9AC6-B6C0A56A5CDA";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4EE93673-FED9-409B-9AC6-B6C0A56A5CDA";
+				PROVISIONING_PROFILE = "D7D469A1-A57E-4EAE-AF2A-B10DBBDBAA11";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D7D469A1-A57E-4EAE-AF2A-B10DBBDBAA11";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -438,8 +442,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: yao hu (KKUB8KB86F)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: yao hu (KKUB8KB86F)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Yao hu (RE7Q8L2TUG)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Yao hu (RE7Q8L2TUG)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -447,8 +451,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "4EE93673-FED9-409B-9AC6-B6C0A56A5CDA";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4EE93673-FED9-409B-9AC6-B6C0A56A5CDA";
+				PROVISIONING_PROFILE = "CE8646B4-31B8-4566-8083-98334FB6124C";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "CE8646B4-31B8-4566-8083-98334FB6124C";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -457,16 +461,19 @@
 		05453E541786EB14007F7F72 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: yao hu (KKUB8KB86F)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: yao hu (KKUB8KB86F)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AngryGirl/AngryGirl-Prefix.pch";
 				INFOPLIST_FILE = "AngryGirl/AngryGirl-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/AngryGirl/weixin\"",
 					"\"$(SRCROOT)/lib/umeng\"",
 					"\"$(SRCROOT)/lib/weixin\"",
 				);
-				PRODUCT_NAME = "老婆的心情";
+				PRODUCT_NAME = Angrygirl;
+				PROVISIONING_PROFILE = "8D8C367B-0B4A-4CED-A1AB-CBE3C579DCEA";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "1D17E624-D1DE-4764-939C-A50D04BEE198";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -479,11 +486,10 @@
 				INFOPLIST_FILE = "AngryGirl/AngryGirl-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/AngryGirl/weixin\"",
 					"\"$(SRCROOT)/lib/umeng\"",
 					"\"$(SRCROOT)/lib/weixin\"",
 				);
-				PRODUCT_NAME = "老婆的心情";
+				PRODUCT_NAME = Angrygirl;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
