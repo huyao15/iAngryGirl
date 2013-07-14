@@ -19,5 +19,6 @@
 - (XLQDayData *)getDayOfMonth : (int)index with : (int)dayOfWeek;
 - (void)preMonth;
 - (void)postMonth;
+- (int)weeks;
 
 @end

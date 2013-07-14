@@ -23,40 +23,19 @@
 - (void)loadView
 {
     [super loadView];
-    self.title = @"老婆的心情";
     [self.view setBackgroundColor:[UIColor colorWithRed:254.0/255.0 green:1.0 blue:219.0/255.0 alpha:1]];
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     [self.tableView setScrollEnabled:NO];
     
-    self.share = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 35, 35)];
-    [self.share setBackgroundImage:[UIImage imageNamed:@"share_to_time_line_icon.png"] forState:UIControlStateNormal];
     [self.navigationController.navigationBar setBarStyle:UIBarStyleBlackOpaque];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.share];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"上月" style:UIBarButtonItemStyleBordered target:self action:@selector(onClickPreMonth)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"下月" style:UIBarButtonItemStyleBordered target:self action:@selector(onClickPostMonth)];
+    
+    self.share = [[UIButton alloc] initWithFrame:CGRectMake(10, self.view.frame.size.height - 90, 300, 40)];
+    [self.share setTitle:@"分享到朋友圈" forState:UIControlStateNormal];
+    [self.share setBackgroundColor:[UIColor darkGrayColor]];
     [self.share addTarget:self action:@selector(sendImageContent) forControlEvents:UIControlEventTouchUpInside];
-
-    [self loadHeaderView];
-}
-
-- (void)loadHeaderView
-{
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
-    self.tableView.tableHeaderView = view;
-    
-    self.month = [[UILabel alloc] initWithFrame:CGRectMake(100, 0, 120, 50)];
-    [self.month setBackgroundColor:[UIColor clearColor]];
-    [self.month setTextColor:[UIColor blackColor]];
-    [self.month setTextAlignment:NSTextAlignmentCenter];
-    [view addSubview:self.month];
-    
-    self.preMonth = [[UIButton alloc] initWithFrame:CGRectMake(38, 9, 22, 31)];
-    [self.preMonth setBackgroundImage:[UIImage imageNamed:@"button_pre.png"] forState:UIControlStateNormal];
-    [self.preMonth addTarget:self action:@selector(onClickPreMonth) forControlEvents:UIControlEventTouchUpInside];
-    [view addSubview:self.preMonth];
-    
-    self.postMonth = [[UIButton alloc] initWithFrame:CGRectMake(270, 9, 22, 31)];
-    [self.postMonth setBackgroundImage:[UIImage imageNamed:@"button_next.png"] forState:UIControlStateNormal];
-    [self.postMonth addTarget:self action:@selector(onClickPostMonth) forControlEvents:UIControlEventTouchUpInside];
-    [view addSubview:self.postMonth];
+    [self.view addSubview:self.share];
 }
 
 - (void)viewDidLoad
@@ -73,7 +52,7 @@
 - (void)loaddata
 {
     NSDateComponents *com = [[XLQCalendarData instance] components];
-    [self.month setText:[NSString stringWithFormat:@"%d年%d月", com.year, com.month]];
+    [self setTitle:[NSString stringWithFormat:@"%d年%d月", com.year, com.month]];
 }
 
 - (void)onClickPreMonth
@@ -143,9 +122,9 @@
 - (float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 0) {
-        return 33;
+        return 35;
     } else {
-        return 45;
+        return 43;
     }
 }
 

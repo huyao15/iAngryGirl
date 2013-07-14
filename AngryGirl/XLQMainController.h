@@ -10,9 +10,6 @@
 
 @interface XLQMainController : UITableViewController
 
-@property (strong, nonatomic) UILabel *month;
-@property (strong, nonatomic) UIButton *preMonth;
-@property (strong, nonatomic) UIButton *postMonth;
 @property (strong, nonatomic) UIButton *share;
 
 @end
