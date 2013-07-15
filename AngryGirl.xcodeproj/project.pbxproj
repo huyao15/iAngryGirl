@@ -65,7 +65,7 @@
 		05212FAD178ED21E00667E58 /* XLQMobClickUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XLQMobClickUtil.h; path = AngryGirl/XLQMobClickUtil.h; sourceTree = SOURCE_ROOT; };
 		05212FAE178ED21E00667E58 /* XLQMobClickUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XLQMobClickUtil.m; path = AngryGirl/XLQMobClickUtil.m; sourceTree = SOURCE_ROOT; };
 		05212FB0178ED2BC00667E58 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		05453E361786EB14007F7F72 /* AngryGirl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AngryGirl.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		05453E361786EB14007F7F72 /* Angrygirl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Angrygirl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05453E391786EB14007F7F72 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		05453E3B1786EB14007F7F72 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		05453E3D1786EB14007F7F72 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -184,7 +184,7 @@
 		05453E371786EB14007F7F72 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				05453E361786EB14007F7F72 /* AngryGirl.app */,
+				05453E361786EB14007F7F72 /* Angrygirl.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -304,7 +304,7 @@
 			);
 			name = AngryGirl;
 			productName = AngryGirl;
-			productReference = 05453E361786EB14007F7F72 /* AngryGirl.app */;
+			productReference = 05453E361786EB14007F7F72 /* Angrygirl.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -424,8 +424,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "D7D469A1-A57E-4EAE-AF2A-B10DBBDBAA11";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D7D469A1-A57E-4EAE-AF2A-B10DBBDBAA11";
+				PROVISIONING_PROFILE = "FDDBBE0F-18FD-4FD3-84A4-09606A2B53FF";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "FDDBBE0F-18FD-4FD3-84A4-09606A2B53FF";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -472,8 +472,8 @@
 					"\"$(SRCROOT)/lib/weixin\"",
 				);
 				PRODUCT_NAME = Angrygirl;
-				PROVISIONING_PROFILE = "8D8C367B-0B4A-4CED-A1AB-CBE3C579DCEA";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "1D17E624-D1DE-4764-939C-A50D04BEE198";
+				PROVISIONING_PROFILE = "D1E8DEB8-9542-4529-8E49-FE92AF029F3B";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D1E8DEB8-9542-4529-8E49-FE92AF029F3B";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
