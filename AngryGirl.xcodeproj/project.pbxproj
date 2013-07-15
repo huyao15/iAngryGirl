@@ -490,6 +490,7 @@
 					"\"$(SRCROOT)/lib/weixin\"",
 				);
 				PRODUCT_NAME = Angrygirl;
+
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -23,14 +23,14 @@
         self.days = [[NSMutableArray alloc] init];
         UIButton *day;
         for (int i=0; i<7; i++) {
-            int x = 3 + 45 * i;
+            int x = 10 + 43 * i;
             int y = 1;
             if (section == 0) {
                 NSString *title = [week objectAtIndex:i];
-                day = [[XLQWeekButton alloc] initWithFrame:CGRectMake(x, y+2, 44, 30) withTitle:title];
+                day = [[XLQWeekButton alloc] initWithFrame:CGRectMake(x, 10, 42, 25) withTitle:title];
             } else {
                 XLQDayData *data = [[XLQCalendarData instance] getDayOfMonth:(section-1)*7+i+1 with:i];
-                day = [[XLQDayButton alloc] initWithFrame:CGRectMake(x, y, 44, 44) withData:data];
+                day = [[XLQDayButton alloc] initWithFrame:CGRectMake(x, y, 42, 42) withData:data];
             }
             
             [self.days addObject:day];

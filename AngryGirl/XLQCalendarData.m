@@ -100,4 +100,9 @@
     self.datas = [XLQMoodDAO queryWithYear:self.components.year withMonth:self.components.month];
 }
 
+- (int)weeks
+{
+    return 7;
+}
+
 @end
