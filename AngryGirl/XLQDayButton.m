@@ -34,9 +34,11 @@
         }
         if (self.data.day <= 0) {
             [self setHidden:YES];
-        } else if (data.canChange) {
-            [self addTarget:self action:@selector(onClick) forControlEvents:UIControlEventTouchUpInside];
         }
+//        else if (data.canChange) {
+//            [self addTarget:self action:@selector(onClick) forControlEvents:UIControlEventTouchUpInside];
+//        }
+        [self addTarget:self action:@selector(onClick) forControlEvents:UIControlEventTouchUpInside];
         
     }
     return self;
@@ -44,6 +46,14 @@
 
 -(void)onClick
 {
+    XLQDayData *sqlData=[XLQMoodDAO queryWithYear:self.data.year withMonth:self.data.month withDay:self.data.day];
+    self.data.description=sqlData.description;
+    if (self.delegate) {
+        [self.delegate clickedDayButton:self.data];
+    }
+    if (!self.data.canChange) {
+        return;
+    }
     [XLQMobClickUtil click:@"set_mood_click"];
     XLQMood *mood = [XLQMood getMoodByIndex:(self.data.mood.index+1)%[XLQMood getMoodCount]];
     self.data.mood = mood;

@@ -60,7 +60,7 @@
         if (com.year == today.year && com.month == today.month && index == today.day) {
             [data setIsToday:YES];
             [data setCanChange:YES];
-        } else if (com.year == today.year && com.month == today.month && index == today.day - 1 && data.mood == [XLQMood UNKNOWN]) {
+        } else if (com.year == today.year && com.month == today.month && index <= today.day  && data.mood == [XLQMood UNKNOWN]) {//index == today.day - 1
             [data setCanChange:YES];
         }
         

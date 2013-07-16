@@ -20,4 +20,6 @@
 @property (nonatomic) BOOL isToday;
 @property (strong, nonatomic) XLQMood *mood;
 
+@property (strong,nonatomic) NSString *description;
+
 @end

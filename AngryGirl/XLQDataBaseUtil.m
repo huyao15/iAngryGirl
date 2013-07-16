@@ -37,6 +37,7 @@ static XLQDataBaseUtil * sharedInstance = nil;
     
 }
 
+
 //唯一一次alloc单例，之后均返回nil
 + (id)allocWithZone:(NSZone *)zone
 {

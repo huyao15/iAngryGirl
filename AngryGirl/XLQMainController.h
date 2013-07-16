@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "XLQDayButton.h"
 
-@interface XLQMainController : UITableViewController
+@interface XLQMainController : UITableViewController<DayButtonClickDelegate>
 
-@property (strong, nonatomic) UIButton *share;
+@property (strong,nonatomic) UIButton *share;
+
+@property (strong,nonatomic) UITextView *descLabel;
 
 @end

@@ -11,6 +11,8 @@
 #import "XLQCalendarData.h"
 #import "WXApi.h"
 #import "XLQMobClickUtil.h"
+#import "XLQDayDescViewController.h"
+#import "XLQUtil.h"
 
 #import <QuartzCore/QuartzCore.h>
 
@@ -18,7 +20,9 @@
 
 @end
 
-@implementation XLQMainController
+@implementation XLQMainController{
+    XLQDayData *data;
+}
 
 - (void)loadView
 {
@@ -36,12 +40,29 @@
     [self.share setBackgroundColor:[UIColor darkGrayColor]];
     [self.share addTarget:self action:@selector(sendImageContent) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.share];
+    
+    self.descLabel=[[UITextView alloc]initWithFrame:CGRectMake(10, self.share.frame.origin.y-120, deviceWidth-20, 120)];
+    NSLog(@"%f,%f", self.view.frame.size.height,self.share.frame.origin.y);
+    self.descLabel.backgroundColor=[UIColor clearColor];
+    self.descLabel.editable=NO;
+    self.descLabel.font=[UIFont systemFontOfSize:15];
+    [self.view addSubview:self.descLabel];
+    self.descLabel.userInteractionEnabled=YES;
+    self.descLabel.textColor=[UIColor grayColor];
+    UITapGestureRecognizer *tapGestureTel = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(onClickDescLable)];
+    [self.descLabel addGestureRecognizer:tapGestureTel];
+    self.descLabel.hidden=YES;
+    
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self loaddata];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    self.descLabel.hidden=YES;
 }
 
 - (void)didReceiveMemoryWarning
@@ -53,6 +74,24 @@
 {
     NSDateComponents *com = [[XLQCalendarData instance] components];
     [self setTitle:[NSString stringWithFormat:@"%d年%d月", com.year, com.month]];
+}
+
+-(void)onClickDescLable{
+    NSLog(@"onClickDescLable");
+    XLQDayDescViewController *dayDescViewController=[[XLQDayDescViewController alloc]init];
+    dayDescViewController.dayData=data;
+    [self.navigationController pushViewController:dayDescViewController animated:YES];
+}
+
+-(void)clickedDayButton:(XLQDayData *)dayData{
+    self.descLabel.hidden=NO;
+    if ([XLQUtil isEmptyStr:dayData.description]) {
+        self.descLabel.text=[ NSString stringWithFormat: @"[点我] %@：",[XLQUtil stringFromDayData:dayData]];
+    }else{
+        self.descLabel.text=dayData.description;
+    }
+    
+    data=dayData;
 }
 
 - (void)onClickPreMonth
@@ -115,7 +154,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"CalendarCell";
-    XLQCalendarCell *cell =  [[XLQCalendarCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier withSection:indexPath.section];
+    XLQCalendarCell *cell =  [[XLQCalendarCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier withSection:indexPath.section withBtnDelegate:self];
     return cell;
 }
 
