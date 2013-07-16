@@ -16,5 +16,6 @@
 @property (strong, nonatomic) FMDatabase *dataBase;
 
 +(XLQDataBaseUtil *)sharedInstance;
+-(void)updateTable;
 
 @end

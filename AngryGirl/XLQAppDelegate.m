@@ -10,6 +10,7 @@
 #import "XLQMainController.h"
 #import "XLQDataBaseUtil.h"
 #import "XLQMobClickUtil.h"
+#import "XLQMoodDAO.h"
 
 @implementation XLQAppDelegate
 
@@ -23,14 +24,20 @@
     if (!b) {
         NSLog(@"RegisterApp Error");
     }
+    [self initDataSource];
     [XLQMobClickUtil start];
-    
     XLQMainController *mainController = [[XLQMainController alloc] init];
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:mainController];
     self.window.rootViewController = navController;
     
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+-(void)initDataSource{
+    XLQDataBaseUtil *dataBase =[XLQDataBaseUtil sharedInstance];
+    [dataBase updateTable];
+    
 }
 
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url

@@ -84,7 +84,7 @@
         FMResultSet *rs  = [db executeQuery:sql];
         while ([rs next]) {
             NSString *createSQL=[rs objectForColumnIndex:0];
-            NSRange range = [createSQL rangeOfString:@"description"];
+            NSRange range = [createSQL rangeOfString:column];
             if (range.location!=NSNotFound) {
                 result=YES;
             }
@@ -95,6 +95,25 @@
     return result;
 }
 
++(BOOL)hasColumn:(NSString *)columnName atTable:(NSString *)tableName{
+    XLQDataBaseUtil * dataBaseUtil = [XLQDataBaseUtil sharedInstance];
+    __block BOOL result=NO;
+    if ((tableName == nil) || (columnName == nil)) return NO;
+    NSString *sql = [NSString stringWithFormat:@"select * from %@ limit 1", tableName];
+    [dataBaseUtil.dbQueue inDatabase:^(FMDatabase *db) {
+        FMResultSet *rs  = [db executeQuery:sql];
+        while ([rs next]) {
+           int up= [rs columnIndexForName:columnName];
+            if (up>0) {
+                result=YES;
+            }
+        }
+        [rs close];
+        NSLog(@"XLQMoodDAO.hasColumn:%d,%@", [db lastErrorCode], [db lastErrorMessage]);
+    }];
+    return result;
+
+}
 
 +(void)parse:(FMResultSet *)rs withMsg:(XLQDayData *)data{
     data.year = [rs intForColumn:@"year"];
@@ -111,7 +130,7 @@
     XLQDataBaseUtil * dataBaseUtil = [XLQDataBaseUtil sharedInstance];
     __block BOOL result=NO;
     [dataBaseUtil.dbQueue inTransaction:^(FMDatabase *db, BOOL *rollback) {
-        NSString *sql = @" alter table mood add column description varchar(255) ";
+        NSString *sql = @" alter table mood add column description1 varchar(255) ";
         result = [db executeUpdate:sql];
         NSLog(@"XLQMoodDAO:%d,%@", [db lastErrorCode], [db lastErrorMessage]);
     }];

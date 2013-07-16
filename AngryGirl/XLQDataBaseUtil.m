@@ -1,4 +1,4 @@
-//
+
 //  DDDataBaseUtil.m
 //  diandian
 //
@@ -37,6 +37,13 @@ static XLQDataBaseUtil * sharedInstance = nil;
     
 }
 
+-(void)updateTable{
+    BOOL result = [XLQMoodDAO hasColumn:@"description1" atTable:@"mood"];
+//   BOOL result = [XLQMoodDAO isExistColumnInTable:@"mood" ColumnName:@"description2"];
+    if (!result) {
+        [XLQMoodDAO addDescriptionColumn];
+    }
+}
 
 //唯一一次alloc单例，之后均返回nil
 + (id)allocWithZone:(NSZone *)zone

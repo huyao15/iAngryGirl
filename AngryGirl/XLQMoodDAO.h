@@ -20,6 +20,7 @@
 +(BOOL)updateDescription:(NSString *)desc WithYear:(int)year withMonth:(int)month withDay:(int) day;
 +(BOOL)isExistColumnInTable:(NSString *)tableName ColumnName:(NSString *)column;
 
++(BOOL)hasColumn:(NSString *)columnName atTable:(NSString *)tableName;
 
 //change table
 +(BOOL)addDescriptionColumn;
