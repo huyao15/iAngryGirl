@@ -20,6 +20,8 @@
 
 @property (strong, nonatomic) XLQDayData *data;
 
+@property (assign,nonatomic) BOOL selected;
+
 @property (weak,nonatomic) id<DayButtonClickDelegate> delegate;
 
 - (id)initWithFrame:(CGRect)frame withData : (XLQDayData *)data;

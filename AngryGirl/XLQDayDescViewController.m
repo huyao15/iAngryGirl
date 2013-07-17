@@ -47,7 +47,22 @@
     self.textView.text=self.dayData.description;
     self.textView.layer.masksToBounds=YES;
     self.textView.layer.cornerRadius=5;
+    self.textView.delegate=self;
     [self.view addSubview:self.textView];
+    
+    self.placeHolderLabel=[[UILabel alloc]initWithFrame:CGRectMake(0, 0, self.textView.frame.size.width, 20)];
+    self.placeHolderLabel.backgroundColor=[UIColor clearColor];
+    self.placeHolderLabel.text=@"你今天肿么她了";
+    self.placeHolderLabel.textColor=[UIColor grayColor];
+    if ([XLQUtil isEmptyStr:self.dayData.description]) {
+        self.placeHolderLabel.hidden=NO;
+    }else{
+        self.placeHolderLabel.hidden=YES;
+    }
+    [self.textView addSubview:self.placeHolderLabel];
+    
+    
+    [self setUpForDismissKeyboard];
 }
 
 -(UIView *)buildInfoView:(CGRect)frame{
@@ -77,6 +92,37 @@
     }
     [XLQMoodDAO updateDescription:description WithYear:self.dayData.year withMonth:self.dayData.month withDay:self.dayData.day];
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+-(BOOL)textViewShouldBeginEditing:(UITextView *)textView{
+    self.placeHolderLabel.hidden=YES;
+    return YES;
+}
+
+
+- (void)setUpForDismissKeyboard {
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+    UITapGestureRecognizer *singleTapGR =
+    [[UITapGestureRecognizer alloc] initWithTarget:self
+                                            action:@selector(tapAnywhereToDismissKeyboard:)];
+    NSOperationQueue *mainQuene =[NSOperationQueue mainQueue];
+    [nc addObserverForName:UIKeyboardWillShowNotification
+                    object:nil
+                     queue:mainQuene
+                usingBlock:^(NSNotification *note){
+                    [self.view addGestureRecognizer:singleTapGR];
+                }];
+    [nc addObserverForName:UIKeyboardWillHideNotification
+                    object:nil
+                     queue:mainQuene
+                usingBlock:^(NSNotification *note){
+                    [self.view removeGestureRecognizer:singleTapGR];
+                }];
+}
+
+- (void)tapAnywhereToDismissKeyboard:(UIGestureRecognizer *)gestureRecognizer {
+    //此method会将self.view里所有的subview的first responder都resign掉
+    [self.view endEditing:YES];
 }
 
 - (void)didReceiveMemoryWarning

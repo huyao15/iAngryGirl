@@ -9,6 +9,7 @@
 #import "XLQCalendarCell.h"
 #import "XLQWeekButton.h"
 #import "XLQCalendarData.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation XLQCalendarCell
 
@@ -31,10 +32,10 @@
                 XLQDayData *data = [[XLQCalendarData instance] getDayOfMonth:(section-1)*7+i+1 with:i];
                 day = [[XLQDayButton alloc] initWithFrame:CGRectMake(x, y, 42, 42) withData:data];
                 if (delegate) {
-                    ((XLQDayButton *)day).delegate=delegate;
+                    XLQDayButton *db = ((XLQDayButton *)day);
+                    db.delegate=delegate;
                 }
             }
-            
             [self.days addObject:day];
             [self addSubview:day];
         }

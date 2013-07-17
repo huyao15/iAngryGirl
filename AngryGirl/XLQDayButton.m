@@ -35,10 +35,9 @@
         if (self.data.day <= 0) {
             [self setHidden:YES];
         }
-//        else if (data.canChange) {
-//            [self addTarget:self action:@selector(onClick) forControlEvents:UIControlEventTouchUpInside];
-//        }
+        
         [self addTarget:self action:@selector(onClick) forControlEvents:UIControlEventTouchUpInside];
+        
         
     }
     return self;
@@ -46,6 +45,9 @@
 
 -(void)onClick
 {
+    if([self isFuture:self.data]){
+        return;
+    }
     XLQDayData *sqlData=[XLQMoodDAO queryWithYear:self.data.year withMonth:self.data.month withDay:self.data.day];
     self.data.description=sqlData.description;
     if (self.delegate) {
@@ -63,6 +65,20 @@
     [self setBackgroundImage:[UIImage imageNamed:mood.resource] forState:UIControlStateNormal];
     
     [XLQMoodDAO saveDB:self.data];
+}
+
+-(BOOL)isFuture:(XLQDayData *)data{
+    NSDate *today=[NSDate date];
+    NSCalendar *cal = [[NSCalendar alloc]initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDateComponents *comps = [cal components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:today];
+    [comps setYear:data.year];
+    [comps setMonth:data.month];
+    [comps setDay:data.day];
+    NSDate *theDay=[cal dateFromComponents:comps];
+    if ([today compare:theDay]<0) {
+        return YES;
+    }
+    return NO;
 }
 
 @end

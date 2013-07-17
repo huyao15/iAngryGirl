@@ -9,10 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "XLQDayData.h"
 
-@interface XLQDayDescViewController : UIViewController
+@interface XLQDayDescViewController : UIViewController<UITextViewDelegate>
 
 @property (nonatomic,strong) XLQDayData *dayData;
 
 @property (nonatomic,strong) UITextView *textView;
+
+@property (nonatomic,strong) UILabel *placeHolderLabel;
 
 @end

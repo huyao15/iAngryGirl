@@ -130,7 +130,7 @@
     XLQDataBaseUtil * dataBaseUtil = [XLQDataBaseUtil sharedInstance];
     __block BOOL result=NO;
     [dataBaseUtil.dbQueue inTransaction:^(FMDatabase *db, BOOL *rollback) {
-        NSString *sql = @" alter table mood add column description1 varchar(255) ";
+        NSString *sql = @" alter table mood add column description varchar(255) ";
         result = [db executeUpdate:sql];
         NSLog(@"XLQMoodDAO:%d,%@", [db lastErrorCode], [db lastErrorMessage]);
     }];

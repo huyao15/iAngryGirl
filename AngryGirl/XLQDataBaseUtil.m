@@ -38,8 +38,7 @@ static XLQDataBaseUtil * sharedInstance = nil;
 }
 
 -(void)updateTable{
-    BOOL result = [XLQMoodDAO hasColumn:@"description1" atTable:@"mood"];
-//   BOOL result = [XLQMoodDAO isExistColumnInTable:@"mood" ColumnName:@"description2"];
+    BOOL result = [XLQMoodDAO hasColumn:@"description" atTable:@"mood"];
     if (!result) {
         [XLQMoodDAO addDescriptionColumn];
     }
