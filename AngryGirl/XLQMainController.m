@@ -67,7 +67,9 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
     self.descText.hidden = YES;
+    self.share.hidden = NO;
 }
 
 - (void)didReceiveMemoryWarning
@@ -97,7 +99,7 @@
     if ([XLQUtil isEmptyStr:dayData.description]) {
         self.descText.text = [NSString stringWithFormat:@"[点我] %@：", [XLQUtil stringFromDayData:dayData]];
     } else {
-        self.descText.text = dayData.description;
+        self.descText.text = [NSString stringWithFormat:@"%@：%@", [XLQUtil stringFromDayData:dayData], dayData.description];
     }
 
     data = dayData;
@@ -121,6 +123,9 @@
 
 - (void)sendImageContent
 {
+    self.share.hidden = YES;
+    self.descText.hidden = YES;
+    
     [XLQMobClickUtil click:@"share_to_pengyouquan_click"];
     UIGraphicsBeginImageContext(self.navigationController.view.bounds.size);
     [self.navigationController.view.layer renderInContext:UIGraphicsGetCurrentContext()];
@@ -131,11 +136,10 @@
 
     // 发送内容给微信
     WXMediaMessage *message = [WXMediaMessage message];
-    [message setThumbImage:image];
+    [message setThumbImage:[UIImage imageWithData:UIImageJPEGRepresentation(image, 0.3)]];
 
     WXImageObject *ext = [WXImageObject object];
-
-    ext.imageData = message.thumbData;
+    ext.imageData = UIImageJPEGRepresentation(image, 1.0);
 
     message.mediaObject = ext;
 
@@ -149,6 +153,10 @@
     if (!b) {
         NSLog(@"SendReq Error");
     }
+    self.share.hidden = NO;
+    req = nil;
+    message = nil;
+    image = nil;
 }
 
 #pragma mark - Table view data source
