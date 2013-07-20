@@ -13,6 +13,6 @@
 
 @property (strong,nonatomic) UIButton *share;
 
-@property (strong,nonatomic) UITextView *descLabel;
+@property (strong,nonatomic) UITextView *descText;
 
 @end

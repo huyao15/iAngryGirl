@@ -60,7 +60,7 @@
         if (com.year == today.year && com.month == today.month && index == today.day) {
             [data setIsToday:YES];
             [data setCanChange:YES];
-        } else if (com.year == today.year && com.month == today.month && index <= today.day  && data.mood == [XLQMood UNKNOWN]) {//index == today.day - 1
+        } else if (![self isFutureWithYear:com.year Month:com.month Day:com.day]  && data.mood == [XLQMood UNKNOWN]) {//index == today.day - 1
             [data setCanChange:YES];
         }
         
@@ -93,6 +93,17 @@
     NSDate *date = [[NSCalendar currentCalendar] dateFromComponents:com];
     self.components = [[NSCalendar currentCalendar] components:NSYearCalendarUnit|NSMonthCalendarUnit fromDate:date];
     [self loadData];
+}
+
+-(BOOL) isFutureWithYear:(int)year Month:(int)month Day:(int)day{
+    NSDate *today=[NSDate date];
+    NSCalendar *cal=[[NSCalendar alloc]initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDateComponents *comps = [cal components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:today];
+    [comps setYear:year];
+    [comps setMonth:month];
+    [comps setDay:day];
+    NSDate *theDay = [cal dateFromComponents:comps];
+    return [theDay compare:today]>0;
 }
 
 - (void)loadData

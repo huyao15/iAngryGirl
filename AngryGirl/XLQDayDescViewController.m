@@ -50,7 +50,7 @@
     self.textView.delegate=self;
     [self.view addSubview:self.textView];
     
-    self.placeHolderLabel=[[UILabel alloc]initWithFrame:CGRectMake(0, 0, self.textView.frame.size.width, 20)];
+    self.placeHolderLabel=[[UILabel alloc]initWithFrame:CGRectMake(5, 5, self.textView.frame.size.width, 20)];
     self.placeHolderLabel.backgroundColor=[UIColor clearColor];
     self.placeHolderLabel.text=@"你今天肿么她了";
     self.placeHolderLabel.textColor=[UIColor grayColor];
