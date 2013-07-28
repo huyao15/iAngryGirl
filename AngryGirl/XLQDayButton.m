@@ -18,13 +18,14 @@
     if (self) {
         self.data = data;
         [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        self.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.5];
         [self.titleLabel setTextAlignment:NSTextAlignmentCenter];
         if (self.data.mood == [XLQMood UNKNOWN]) {
             if (self.data.isToday) {
                 [self setBackgroundImage:[UIImage imageNamed:@"bg_click_here.png"] forState:UIControlStateNormal];
                 [self setTitle:@"" forState:UIControlStateNormal];
             } else {
-                [self setBackgroundColor:[UIColor colorWithRed:176.0/255.0 green:176.0/255.0 blue:176.0/255.0 alpha:1]];
+//                [self setBackgroundColor:[UIColor colorWithRed:176.0/255.0 green:176.0/255.0 blue:176.0/255.0 alpha:1]];
                 [self setTitle:[NSString stringWithFormat:@"%@", data.text] forState:UIControlStateNormal];
             }
         } else {

@@ -15,6 +15,6 @@
 
 @property (weak,nonatomic) id<DayButtonClickDelegate> dayBtnDelegate;
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier withSection : (int)section withBtnDelegate:(id /*<DayButtonClickDelegate>*/)delegate;
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier withSection : (int)section withBtnDelegate:(id /*<DayButtonClickDelegate>*/)delegate withComps:(NSDateComponents *)comp;
 
 @end

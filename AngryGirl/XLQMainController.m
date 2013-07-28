@@ -13,6 +13,7 @@
 #import "XLQMobClickUtil.h"
 #import "XLQDayDescViewController.h"
 #import "XLQUtil.h"
+#import "IIViewDeckController.h"
 
 #import <QuartzCore/QuartzCore.h>
 
@@ -35,19 +36,15 @@
     [self.tableView setScrollEnabled:NO];
 
     [self.navigationController.navigationBar setBarStyle:UIBarStyleBlackOpaque];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"上月" style:UIBarButtonItemStyleBordered target:self action:@selector(onClickPreMonth)];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"下月" style:UIBarButtonItemStyleBordered target:self action:@selector(onClickPostMonth)];
-
+    self.navigationItem.leftBarButtonItem=[[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"icon_more.png"] style:UIBarButtonItemStyleBordered target:self.viewDeckController action:@selector(toggleLeftView)];
+    ((XLQLeftMenuViewController *)self.viewDeckController.leftController).delegate=self;
     self.share = [[UIButton alloc] initWithFrame:CGRectMake(10, self.view.frame.size.height - 90, 300, 40)];
     [self.share setTitle:@"分享到朋友圈" forState:UIControlStateNormal];
     [self.share setBackgroundColor:[UIColor darkGrayColor]];
     [self.share addTarget:self action:@selector(sendImageContent) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.share];
 
-    NSLog(@"%f<%f<%f", self.share.frame.origin.y, self.tableView.frame.origin.y, self.tableView.frame.size.height);
-
     self.descText = [[UITextView alloc]initWithFrame:CGRectMake(10, (calTextHeight * 5 + calTitleHeight), deviceWidth - 20, self.share.frame.origin.y - (calTextHeight * 5 + calTitleHeight + 5))];
-    NSLog(@"%f,%f", self.descText.frame.size.height, self.descText.frame.origin.y);
     self.descText.backgroundColor = [UIColor clearColor];
     self.descText.editable = NO;
     self.descText.font = [UIFont systemFontOfSize:15];
@@ -59,7 +56,7 @@
     self.descText.hidden = YES;
 }
 
-- (void)viewDidLoad
+- (void)viewDidLoad//此方法会再road的时候还进入吗
 {
     [super viewDidLoad];
     [self loaddata];
@@ -80,8 +77,13 @@
 - (void)loaddata
 {
     NSDateComponents *com = [[XLQCalendarData instance] components];
-
     [self setTitle:[NSString stringWithFormat:@"%d年%d月", com.year, com.month]];
+}
+
+-(void)didSelectedYear:(NSInteger)year month:(NSInteger)month{
+    NSDateComponents *com = [[[XLQCalendarData alloc] initWithYear:year month:month] components];
+    [self setTitle:[NSString stringWithFormat:@"%d年%d月", com.year, com.month]];
+    [self.tableView reloadData];
 }
 
 - (void)onClickDescLable
@@ -103,22 +105,6 @@
     }
 
     data = dayData;
-}
-
-- (void)onClickPreMonth
-{
-    [[XLQCalendarData instance] preMonth];
-    self.descText.hidden = YES;
-    [self loaddata];
-    [self.tableView reloadData];
-}
-
-- (void)onClickPostMonth
-{
-    [[XLQCalendarData instance] postMonth];
-    self.descText.hidden = YES;
-    [self loaddata];
-    [self.tableView reloadData];
 }
 
 - (void)sendImageContent
@@ -163,7 +149,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 7;
+    return 6;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -174,9 +160,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"CalendarCell";
-    XLQCalendarCell *cell = [[XLQCalendarCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier withSection:indexPath.section withBtnDelegate:self];
-
-    NSLog(@"%d<%f,%f>", indexPath.section, cell.frame.origin.y, cell.frame.size.height);
+    XLQCalendarCell *cell = [[XLQCalendarCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier withSection:indexPath.section withBtnDelegate:self withComps:nil];
     return cell;
 }
 
@@ -192,6 +176,8 @@
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{}
+{
+    
+}
 
 @end

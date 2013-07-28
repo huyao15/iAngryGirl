@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "XLQDayButton.h"
+#import "XLQLeftMenuViewController.h"
 
-@interface XLQMainController : UITableViewController<DayButtonClickDelegate>
+@interface XLQMainController : UITableViewController<DayButtonClickDelegate,LeftMenuSelectedDelegate>
 
 @property (strong,nonatomic) UIButton *share;
 

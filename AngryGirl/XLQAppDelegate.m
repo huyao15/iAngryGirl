@@ -11,6 +11,8 @@
 #import "XLQDataBaseUtil.h"
 #import "XLQMobClickUtil.h"
 #import "XLQMoodDAO.h"
+#import "IIViewDeckController.h"
+#import "XLQLeftMenuViewController.h"
 
 @implementation XLQAppDelegate
 
@@ -26,12 +28,30 @@
     }
     [self initDataSource];
     [XLQMobClickUtil start];
-    XLQMainController *mainController = [[XLQMainController alloc] init];
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:mainController];
-    self.window.rootViewController = navController;
+//    XLQMainController *mainController = [[XLQMainController alloc] init];
+//    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:mainController];
+//    self.window.rootViewController = navController;
+    
+    IIViewDeckController* deckController = [self generateControllerStack];
+    self.window.rootViewController = deckController;
     
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+- (IIViewDeckController*)generateControllerStack {
+    XLQLeftMenuViewController* leftController = [[XLQLeftMenuViewController alloc]init];
+                                                 
+    
+    UIViewController *centerController = [[XLQMainController alloc] init];
+    centerController = [[UINavigationController alloc] initWithRootViewController:centerController];
+    IIViewDeckController* deckController =  [[IIViewDeckController alloc] initWithCenterViewController:centerController
+                                                                                    leftViewController:leftController
+                                                                                   rightViewController:nil];
+    deckController.leftSize = leftMenuWidth;
+    
+    [deckController disablePanOverViewsOfClass:NSClassFromString(@"_UITableViewHeaderFooterContentView")];
+    return deckController;
 }
 
 -(void)initDataSource{
