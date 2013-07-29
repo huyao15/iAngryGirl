@@ -24,19 +24,6 @@
     return self;
 }
 
-- (id)initWithYear:(NSInteger)year month:(NSInteger)month
-{
-    self = [super init];
-    if (self) {
-        NSCalendar *calendar = [NSCalendar currentCalendar];
-        self.components = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit fromDate:[NSDate date]];
-        [self.components setYear:year];
-        [self.components setMonth:month];
-        [self loadData];
-    }
-    return self;
-}
-
 + (XLQCalendarData *)instance
 {
     static XLQCalendarData *instance;
@@ -83,6 +70,18 @@
         data.day = 0;
     }
     return data;
+}
+
+- (void)reLoadDataYear:(NSInteger) year month:(NSInteger) month
+{
+    xxx = 0;
+    NSDateComponents *com = [[NSDateComponents alloc] init];
+    com.year = year;
+    com.month = month;
+    com.day = 1;
+    NSDate *date = [[NSCalendar currentCalendar] dateFromComponents:com];
+    self.components = [[NSCalendar currentCalendar] components:NSYearCalendarUnit|NSMonthCalendarUnit fromDate:date];
+    [self loadData];
 }
 
 - (void)preMonth

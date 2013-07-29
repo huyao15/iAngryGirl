@@ -13,7 +13,7 @@
 
 @implementation XLQCalendarCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier withSection:(int)section withBtnDelegate:(id /*<DayButtonClickDelegate>*/)delegate withComps:(NSDateComponents *)comp;
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier withSection:(int)section withBtnDelegate:(id /*<DayButtonClickDelegate>*/)delegate
 {
     //    NSArray *week = [NSArray arrayWithObjects:@"一", @"二", @"三", @"四", @"五", @"六", @"日", nil];
 
@@ -24,11 +24,11 @@
         self.days = [[NSMutableArray alloc] init];
         UIButton *day;
 
-        for (int i = 0; i < 6; i++) {
-            int         x = 43 * i;
+        for (int i = 0; i <= 6; i++) {
+            int         x = deviceWidth/7 * i;
             int         y = 1;
             XLQDayData  *data = [[XLQCalendarData instance] getDayOfMonth:section * 7 + i + 1 with:i];
-            day = [[XLQDayButton alloc] initWithFrame:CGRectMake(x, y, 42, 70) withData:data];
+            day = [[XLQDayButton alloc] initWithFrame:CGRectMake(x, y, deviceWidth/7-1, calCellHeight) withData:data];
 
             if (delegate) {
                 XLQDayButton *db = ((XLQDayButton *)day);

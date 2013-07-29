@@ -13,12 +13,9 @@
 #import "XLQMobClickUtil.h"
 #import "XLQDayDescViewController.h"
 #import "XLQUtil.h"
-#import "IIViewDeckController.h"
-
 #import <QuartzCore/QuartzCore.h>
+#import "UIImage+Compress.h"
 
-#define calTitleHeight  35
-#define calTextHeight   43
 
 @interface XLQMainController ()
 
@@ -26,25 +23,34 @@
 
 @implementation XLQMainController {
     XLQDayData *data;
+    UIImageView *bgImgView;
 }
 
 - (void)loadView
 {
     [super loadView];
-    [self.view setBackgroundColor:[UIColor colorWithRed:254.0 / 255.0 green:1.0 blue:219.0 / 255.0 alpha:1]];
+    self.view.backgroundColor = [UIColor clearColor];//[UIColor colorWithPatternImage:[XLQUtil getBackGroudImage]];
+    bgImgView = [[UIImageView alloc] initWithFrame:CGRectMake(0,0,deviceWidth,deviceHeight)];
+    [bgImgView setImage:[XLQUtil getBackGroudImage]];
+    
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     [self.tableView setScrollEnabled:NO];
+    self.tableView.backgroundView = bgImgView;
 
-    [self.navigationController.navigationBar setBarStyle:UIBarStyleBlackOpaque];
-    self.navigationItem.leftBarButtonItem=[[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"icon_more.png"] style:UIBarButtonItemStyleBordered target:self.viewDeckController action:@selector(toggleLeftView)];
-    ((XLQLeftMenuViewController *)self.viewDeckController.leftController).delegate=self;
+    [self.navigationController.navigationBar setBarStyle:UIBarStyleBlack];
+//    self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
+    self.navigationController.navigationBar.alpha = 0.8;
+    self.navigationController.navigationBar.backgroundColor = [UIColor whiteColor];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"icon_more.png"] style:UIBarButtonItemStyleBordered target:self.viewDeckController action:@selector(toggleLeftView)];
+    self.viewDeckController.delegate=self;
+    ((XLQLeftMenuViewController *)self.viewDeckController.leftController).delegate = self;
     self.share = [[UIButton alloc] initWithFrame:CGRectMake(10, self.view.frame.size.height - 90, 300, 40)];
     [self.share setTitle:@"分享到朋友圈" forState:UIControlStateNormal];
-    [self.share setBackgroundColor:[UIColor darkGrayColor]];
+    [self.share setBackgroundColor:[UIColor colorWithWhite:0.5 alpha:0.5]];
     [self.share addTarget:self action:@selector(sendImageContent) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.share];
 
-    self.descText = [[UITextView alloc]initWithFrame:CGRectMake(10, (calTextHeight * 5 + calTitleHeight), deviceWidth - 20, self.share.frame.origin.y - (calTextHeight * 5 + calTitleHeight + 5))];
+    self.descText = [[UITextView alloc]initWithFrame:CGRectMake(10, calCellHeight * 5 , deviceWidth - 20, self.share.frame.origin.y - (calCellHeight * 5 + 5))];
     self.descText.backgroundColor = [UIColor clearColor];
     self.descText.editable = NO;
     self.descText.font = [UIFont systemFontOfSize:15];
@@ -56,7 +62,7 @@
     self.descText.hidden = YES;
 }
 
-- (void)viewDidLoad//此方法会再road的时候还进入吗
+- (void)viewDidLoad 
 {
     [super viewDidLoad];
     [self loaddata];
@@ -77,13 +83,22 @@
 - (void)loaddata
 {
     NSDateComponents *com = [[XLQCalendarData instance] components];
+
     [self setTitle:[NSString stringWithFormat:@"%d年%d月", com.year, com.month]];
 }
 
--(void)didSelectedYear:(NSInteger)year month:(NSInteger)month{
-    NSDateComponents *com = [[[XLQCalendarData alloc] initWithYear:year month:month] components];
-    [self setTitle:[NSString stringWithFormat:@"%d年%d月", com.year, com.month]];
+#pragma XLQLeftMenuViewController
+
+- (void)didSelectedYear:(NSInteger)year month:(NSInteger)month
+{
+    [[XLQCalendarData instance] reLoadDataYear:year month:month];
+    self.descText.hidden = YES;
+    [self loaddata];
     [self.tableView reloadData];
+}
+
+-(void)didChangeBgImg:(UIImage *)image{
+    bgImgView.image = image;
 }
 
 - (void)onClickDescLable
@@ -91,6 +106,7 @@
     NSLog(@"onClickDescLable");
     XLQDayDescViewController *dayDescViewController = [[XLQDayDescViewController alloc]init];
     dayDescViewController.dayData = data;
+    dayDescViewController.noShowLeftView = YES;
     [self.navigationController pushViewController:dayDescViewController animated:YES];
 }
 
@@ -111,7 +127,7 @@
 {
     self.share.hidden = YES;
     self.descText.hidden = YES;
-    
+
     [XLQMobClickUtil click:@"share_to_pengyouquan_click"];
     UIGraphicsBeginImageContext(self.navigationController.view.bounds.size);
     [self.navigationController.view.layer renderInContext:UIGraphicsGetCurrentContext()];
@@ -122,11 +138,14 @@
 
     // 发送内容给微信
     WXMediaMessage *message = [WXMediaMessage message];
-    [message setThumbImage:[UIImage imageWithData:UIImageJPEGRepresentation(image, 0.3)]];
-
+    NSLog(@"%d",[image compressedData].length);
+    UIImage *compressedImg = [UIImage imageWithData:[image compressedData]];
+    [message setThumbImage:compressedImg];
+    NSLog(@"%d",UIImageJPEGRepresentation(compressedImg, 1.0).length);
+    
     WXImageObject *ext = [WXImageObject object];
     ext.imageData = UIImageJPEGRepresentation(image, 1.0);
-
+    NSLog(@"图片大小%d",ext.imageData.length);
     message.mediaObject = ext;
 
     SendMessageToWXReq *req = [[SendMessageToWXReq alloc] init];
@@ -139,10 +158,29 @@
     if (!b) {
         NSLog(@"SendReq Error");
     }
+
     self.share.hidden = NO;
     req = nil;
     message = nil;
     image = nil;
+}
+
+#pragma IIViewDeckControllerDelegate
+
+-(void)viewDeckController:(IIViewDeckController *)viewDeckController didCloseViewSide:(IIViewDeckSide)viewDeckSide animated:(BOOL)animated{
+    if (viewDeckSide==IIViewDeckLeftSide) {
+        self.share.userInteractionEnabled = YES;
+        self.descText.userInteractionEnabled = YES;
+        self.tableView.userInteractionEnabled = YES;
+    }
+}
+
+-(void)viewDeckController:(IIViewDeckController *)viewDeckController didOpenViewSide:(IIViewDeckSide)viewDeckSide animated:(BOOL)animated{
+    if (viewDeckSide==IIViewDeckLeftSide) {
+        self.share.userInteractionEnabled = NO;
+        self.descText.userInteractionEnabled = NO;
+        self.tableView.userInteractionEnabled = NO;
+    }
 }
 
 #pragma mark - Table view data source
@@ -160,24 +198,19 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"CalendarCell";
-    XLQCalendarCell *cell = [[XLQCalendarCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier withSection:indexPath.section withBtnDelegate:self withComps:nil];
+    XLQCalendarCell *cell = [[XLQCalendarCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier withSection:indexPath.section withBtnDelegate:self];
+
     return cell;
 }
 
 - (float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == 0) {
-        return calTitleHeight;
-    } else {
-        return calTextHeight;
-    }
+    return calCellHeight+1;
 }
 
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    
-}
+{}
 
 @end

@@ -11,11 +11,15 @@
 
 @protocol LeftMenuSelectedDelegate <NSObject>
 
+@optional
+
 - (void)didSelectedYear:(NSInteger)year month:(NSInteger)month;
+
+-(void)didChangeBgImg:(UIImage *)image;
 
 @end
 
-@interface XLQLeftMenuViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, HeadViewDelegate>
+@interface XLQLeftMenuViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, HeadViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 
 @property (nonatomic, strong) UITableView       *tableView;
 @property (nonatomic, strong) NSMutableArray    *headViewArray;

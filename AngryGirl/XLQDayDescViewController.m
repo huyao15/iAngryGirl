@@ -10,6 +10,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "XLQUtil.h"
 #import "XLQMoodDAO.h"
+#import "XLQMessageDialogo.h"
 
 @interface XLQDayDescViewController ()
 
@@ -29,8 +30,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.viewDeckController.delegate = self;
+    
 	// Do any additional setup after loading the view.
-    self.view.backgroundColor=[UIColor colorWithRed:254.0/255.0 green:1.0 blue:219.0/255.0 alpha:1];
+    UIImageView *bgImgView = [[UIImageView alloc] initWithFrame:CGRectMake(0,0,deviceWidth,deviceHeight)];
+    [bgImgView setImage:[XLQUtil getBackGroudImage]];
+    [self.view addSubview:bgImgView];
+    [self.view sendSubviewToBack:bgImgView];
     self.title=@"记录心情";
     
     //bar
@@ -40,14 +46,15 @@
     UIView *headView = [self buildInfoView:CGRectMake(10, 0, deviceWidth-20, 50)];
     [self.view addSubview:headView];
     
-    self.textView=[[UITextView alloc]initWithFrame:CGRectMake(10, headView.frame.size.height, deviceWidth-20, 200)];
+    self.textView=[[UITextView alloc]initWithFrame:CGRectMake(10, headView.frame.size.height, deviceWidth-20, 300)];
     self.textView.font=[UIFont systemFontOfSize:18];
-    self.textView.layer.borderColor=[[UIColor greenColor]CGColor];
+    self.textView.layer.borderColor=[[UIColor grayColor]CGColor];
     self.textView.layer.borderWidth=2;
     self.textView.text=self.dayData.description;
     self.textView.layer.masksToBounds=YES;
     self.textView.layer.cornerRadius=5;
     self.textView.delegate=self;
+    self.textView.backgroundColor = [UIColor colorWithWhite:0.7 alpha:0.5];
     [self.view addSubview:self.textView];
     
     self.placeHolderLabel=[[UILabel alloc]initWithFrame:CGRectMake(5, 5, self.textView.frame.size.width, 20)];
@@ -82,12 +89,15 @@
 }
 
 -(void)cancel{
+    _noShowLeftView = NO;
+    [self viewDeckController:self.viewDeckController shouldOpenViewSide:IIViewDeckLeftSide];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
 -(void)saveDescription{
     NSString *description = self.textView.text;
     if ([XLQUtil isEmptyStr:description]) {
+        [XLQMessageDialogo showMessage:@"内容不能为空" inView:self.view inSeconds:2];
         return;
     }
     [XLQMoodDAO updateDescription:description WithYear:self.dayData.year withMonth:self.dayData.month withDay:self.dayData.day];
@@ -99,6 +109,14 @@
     return YES;
 }
 
+
+#pragma IIViewDeckSide
+- (BOOL)viewDeckController:(IIViewDeckController*)viewDeckController shouldOpenViewSide:(IIViewDeckSide)viewDeckSide{
+    if (_noShowLeftView) {
+        return NO;
+    }
+    return YES;
+}
 
 - (void)setUpForDismissKeyboard {
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];

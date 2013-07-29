@@ -28,4 +28,14 @@
     return [formatter stringFromDate:[calendar dateFromComponents:comps]];
 }
 
++(UIImage *) getBackGroudImage{
+    NSData *imgData = [[NSUserDefaults standardUserDefaults] objectForKey:KEY_BGIMG];
+    if (imgData) {
+        return [UIImage imageWithData:imgData];
+    }else{
+       return  [UIImage imageNamed:@"bg_default.jpg"];
+    }
+}
+
+
 @end

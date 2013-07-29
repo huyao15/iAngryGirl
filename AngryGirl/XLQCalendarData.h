@@ -14,13 +14,12 @@
 @property (strong, nonatomic) NSDateComponents  *components;
 @property (strong, nonatomic) NSDictionary      *datas;
 
--(id)initWithYear:(NSInteger)year month:(NSInteger)month;
-
 + (XLQCalendarData *)instance;
 
 - (XLQDayData *)getDayOfMonth:(int)index with:(int)dayOfWeek;
 - (void)preMonth;
 - (void)postMonth;
+- (void)reLoadDataYear:(NSInteger) year month:(NSInteger) month;
 - (int)weeks;
 
 @end

@@ -9,6 +9,7 @@
 #import "XLQDayButton.h"
 #import "XLQMoodDAO.h"
 #import "XLQMobClickUtil.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation XLQDayButton
 
@@ -18,25 +19,28 @@
     if (self) {
         self.data = data;
         [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        self.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.5];
+        self.backgroundColor = [UIColor colorWithWhite:0.5 alpha:0.5];
         [self.titleLabel setTextAlignment:NSTextAlignmentCenter];
+        UILabel *titleLable = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 20, 20)];
+        titleLable.textColor = [UIColor blackColor];
+        titleLable.text = data.text;
+        titleLable.backgroundColor = [UIColor clearColor];
+        [self addSubview:titleLable];
+        
+        _moodImg = [[UIImageView alloc]initWithFrame:CGRectMake((frame.size.width-35)/2, (frame.size.height-20-35)/2+20, 35, 35)];
+        [self addSubview:_moodImg];
         if (self.data.mood == [XLQMood UNKNOWN]) {
             if (self.data.isToday) {
-                [self setBackgroundImage:[UIImage imageNamed:@"bg_click_here.png"] forState:UIControlStateNormal];
-                [self setTitle:@"" forState:UIControlStateNormal];
-            } else {
-//                [self setBackgroundColor:[UIColor colorWithRed:176.0/255.0 green:176.0/255.0 blue:176.0/255.0 alpha:1]];
-                [self setTitle:[NSString stringWithFormat:@"%@", data.text] forState:UIControlStateNormal];
+                _moodImg.image = [UIImage imageNamed:@"bg_click_here.png"];
             }
         } else {
-            [self setBackgroundColor:nil];
-            [self setTitle:[NSString stringWithFormat:@""] forState:UIControlStateNormal];
-            [self setBackgroundImage:[UIImage imageNamed:self.data.mood.resource] forState:UIControlStateNormal];
+            _moodImg.image = [UIImage imageNamed:self.data.mood.resource];
         }
         if (self.data.day <= 0) {
             [self setHidden:YES];
         }
-        
+        self.layer.masksToBounds = YES;
+        self.layer.cornerRadius = 5;
         [self addTarget:self action:@selector(onClick) forControlEvents:UIControlEventTouchUpInside];
         
         
@@ -61,9 +65,10 @@
     XLQMood *mood = [XLQMood getMoodByIndex:(self.data.mood.index+1)%[XLQMood getMoodCount]];
     self.data.mood = mood;
     self.data.updatedTime = [NSDate date];
-    [self setBackgroundColor:nil];
-    [self setTitle:[NSString stringWithFormat:@""] forState:UIControlStateNormal];
-    [self setBackgroundImage:[UIImage imageNamed:mood.resource] forState:UIControlStateNormal];
+//    [self setBackgroundColor:nil];
+//    [self setTitle:[NSString stringWithFormat:@""] forState:UIControlStateNormal];
+//    [self setBackgroundImage:[UIImage imageNamed:mood.resource] forState:UIControlStateNormal];
+    _moodImg.image=[UIImage imageNamed:mood.resource];
     
     [XLQMoodDAO saveDB:self.data];
 }

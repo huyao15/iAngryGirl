@@ -20,6 +20,8 @@
 
 @property (strong, nonatomic) XLQDayData *data;
 
+@property (strong, nonatomic) UIImageView *moodImg;
+
 @property (assign,nonatomic) BOOL selected;
 
 @property (weak,nonatomic) id<DayButtonClickDelegate> delegate;
