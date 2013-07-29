@@ -16,6 +16,8 @@
 +(void)createTable:(FMDatabase *)database;
 +(BOOL)saveDB:(XLQDayData *) data;
 +(NSDictionary *)queryWithYear : (int)year withMonth : (int)month;
++(NSDictionary *)groupByMoodCodeWithYear:(int)year withMonth:(int)month;
+
 +(XLQDayData *)queryWithYear:(int)year withMonth:(int)month withDay:(int)day;
 +(BOOL)updateDescription:(NSString *)desc WithYear:(int)year withMonth:(int)month withDay:(int) day;
 +(BOOL)isExistColumnInTable:(NSString *)tableName ColumnName:(NSString *)column;

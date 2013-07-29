@@ -16,3 +16,6 @@
 //ui
 #define deviceWidth [UIScreen mainScreen].bounds.size.width
 #define deviceHeight [UIScreen mainScreen].bounds.size.height
+
+#define leftMenuWidth 90
+#define calCellHeight 60

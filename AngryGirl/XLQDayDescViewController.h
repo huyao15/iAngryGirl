@@ -8,13 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "XLQDayData.h"
+#import "IIViewDeckController.h"
 
-@interface XLQDayDescViewController : UIViewController<UITextViewDelegate>
+@interface XLQDayDescViewController : UIViewController<UITextViewDelegate,IIViewDeckControllerDelegate>
 
 @property (nonatomic,strong) XLQDayData *dayData;
 
 @property (nonatomic,strong) UITextView *textView;
 
 @property (nonatomic,strong) UILabel *placeHolderLabel;
+
+@property (nonatomic,assign) BOOL noShowLeftView;
 
 @end

@@ -72,6 +72,18 @@
     return data;
 }
 
+- (void)reLoadDataYear:(NSInteger) year month:(NSInteger) month
+{
+    xxx = 0;
+    NSDateComponents *com = [[NSDateComponents alloc] init];
+    com.year = year;
+    com.month = month;
+    com.day = 1;
+    NSDate *date = [[NSCalendar currentCalendar] dateFromComponents:com];
+    self.components = [[NSCalendar currentCalendar] components:NSYearCalendarUnit|NSMonthCalendarUnit fromDate:date];
+    [self loadData];
+}
+
 - (void)preMonth
 {
     xxx = 0;

@@ -11,14 +11,15 @@
 
 @interface XLQCalendarData : NSObject
 
-@property (strong, nonatomic) NSDateComponents *components;
-@property (strong, nonatomic) NSDictionary *datas;
+@property (strong, nonatomic) NSDateComponents  *components;
+@property (strong, nonatomic) NSDictionary      *datas;
 
 + (XLQCalendarData *)instance;
 
-- (XLQDayData *)getDayOfMonth : (int)index with : (int)dayOfWeek;
+- (XLQDayData *)getDayOfMonth:(int)index with:(int)dayOfWeek;
 - (void)preMonth;
 - (void)postMonth;
+- (void)reLoadDataYear:(NSInteger) year month:(NSInteger) month;
 - (int)weeks;
 
 @end

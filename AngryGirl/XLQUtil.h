@@ -8,11 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import "XLQDayData.h"
+#define KEY_BGIMG @"backgroud_image"
 
 @interface XLQUtil : NSObject
 
 +(BOOL)isEmptyStr:(NSString *)str;
 
 +(NSString *)stringFromDayData:(XLQDayData *)dayData;
+
++(UIImage *) getBackGroudImage;
 
 @end

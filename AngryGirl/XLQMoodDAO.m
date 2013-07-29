@@ -48,6 +48,21 @@
     return datas;
 }
 
++(NSDictionary *)groupByMoodCodeWithYear:(int)year withMonth:(int)month{
+    NSMutableDictionary *datas = [[NSMutableDictionary alloc] init];
+    XLQDataBaseUtil * dataBaseUtil = [XLQDataBaseUtil sharedInstance];
+    [dataBaseUtil.dbQueue inDatabase:^(FMDatabase *db) {
+        FMResultSet *rs = [db executeQuery:@"SELECT mood_code ,count(mood_code) mcount FROM mood WHERE year=? AND month=? group by mood_code ", [NSNumber numberWithInt:year], [NSNumber numberWithInt:month]];
+        while ([rs next]) {
+            NSString *mood_code = [rs stringForColumn:@"mood_code"];
+            NSInteger mood_count = [rs intForColumn:@"mcount"];
+            [datas setValue:[NSNumber numberWithInt:mood_count ] forKey:mood_code];
+        }
+        [rs close];
+    }];
+    return datas;
+}
+
 +(XLQDayData *)queryWithYear:(int)year withMonth:(int)month withDay:(int)day
 {
      XLQDayData *data = [[XLQDayData alloc] init];
