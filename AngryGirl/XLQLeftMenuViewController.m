@@ -39,7 +39,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     UIButton *changeBgBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, deviceWidth - leftMenuWidth, 40)];
-    bgImage = [[UIImageView alloc]initWithImage:[XLQUtil getBackGroudImage]];
+    bgImage = [[UIImageView alloc] initWithImage:[XLQUtil getBackGroudImage]];
+    bgImage.contentMode = UIViewContentModeScaleAspectFill;
     bgImage.frame = CGRectMake(5, 5, 30, 30);
     [changeBgBtn addSubview:bgImage];
     UILabel *changeBgBtnBorder = [[UILabel alloc]initWithFrame:CGRectMake(0, changeBgBtn.frame.origin.y+changeBgBtn.frame.size.height, deviceWidth - leftMenuWidth, 1)];
@@ -114,9 +115,8 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    XLQHeadView *headView = [self.headViewArray objectAtIndex:indexPath.section];
-
-    return headView.open ? 35 : 0;
+    //XLQHeadView *headView = [self.headViewArray objectAtIndex:indexPath.section];
+    return 40;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
@@ -150,7 +150,7 @@
 {
     static NSString *indentifier = @"cell";
     XLQHeadView     *headView = [self.headViewArray objectAtIndex:indexPath.section];
-    XLQLeftMenuCell *cell = [[XLQLeftMenuCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:indentifier rowAtIndexPath:indexPath withHeadView:headView];
+    XLQLeftMenuCell *cell = [[XLQLeftMenuCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:indentifier rowAtIndexPath:indexPath withHeadView:headView];
     //    cell.selectedBackgroundView
     return cell;
 }

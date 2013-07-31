@@ -63,6 +63,9 @@
         } else if (![self isFutureWithYear:com.year Month:com.month Day:com.day]  && data.mood == [XLQMood UNKNOWN]) {//index == today.day - 1
             [data setCanChange:YES];
         }
+        if (![self isFutureWithYear:com.year Month:com.month Day:com.day]) {
+            [data setCanChange:YES];
+        }
         
     } else {
         xxx ++;

@@ -25,10 +25,10 @@
         UIButton *day;
 
         for (int i = 0; i <= 6; i++) {
-            int         x = deviceWidth/7 * i;
+            int         x = 3 + 45 * i;
             int         y = 1;
             XLQDayData  *data = [[XLQCalendarData instance] getDayOfMonth:section * 7 + i + 1 with:i];
-            day = [[XLQDayButton alloc] initWithFrame:CGRectMake(x, y, deviceWidth/7-1, calCellHeight) withData:data];
+            day = [[XLQDayButton alloc] initWithFrame:CGRectMake(x, y, 44, calCellHeight) withData:data];
 
             if (delegate) {
                 XLQDayButton *db = ((XLQDayButton *)day);

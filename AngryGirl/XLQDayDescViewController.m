@@ -35,21 +35,24 @@
 	// Do any additional setup after loading the view.
     UIImageView *bgImgView = [[UIImageView alloc] initWithFrame:CGRectMake(0,0,deviceWidth,deviceHeight)];
     [bgImgView setImage:[XLQUtil getBackGroudImage]];
+    [bgImgView setContentMode:UIViewContentModeScaleAspectFill];
     [self.view addSubview:bgImgView];
     [self.view sendSubviewToBack:bgImgView];
     self.title=@"记录心情";
+    
+    int t = self.navigationController.navigationBar.frame.size.height + 5;
     
     //bar
     self.navigationItem.leftBarButtonItem=[[UIBarButtonItem alloc]initWithTitle:@"取消" style:UIBarButtonItemStyleBordered target:self action:@selector(cancel)];
     self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithTitle:@"保存" style:UIBarButtonItemStyleBordered target:self action:@selector(saveDescription)];
     //head
-    UIView *headView = [self buildInfoView:CGRectMake(10, 0, deviceWidth-20, 50)];
+    UIView *headView = [self buildInfoView:CGRectMake(10, t, deviceWidth-20, 50)];
     [self.view addSubview:headView];
     
-    self.textView=[[UITextView alloc]initWithFrame:CGRectMake(10, headView.frame.size.height, deviceWidth-20, 300)];
+    self.textView=[[UITextView alloc]initWithFrame:CGRectMake(5, headView.frame.size.height + t, deviceWidth-10, 300)];
     self.textView.font=[UIFont systemFontOfSize:18];
-    self.textView.layer.borderColor=[[UIColor grayColor]CGColor];
-    self.textView.layer.borderWidth=2;
+    self.textView.layer.borderColor = [UIColor colorWithWhite:0.8 alpha:0.8].CGColor;
+    self.textView.layer.borderWidth=1;
     self.textView.text=self.dayData.description;
     self.textView.layer.masksToBounds=YES;
     self.textView.layer.cornerRadius=5;
@@ -59,8 +62,8 @@
     
     self.placeHolderLabel=[[UILabel alloc]initWithFrame:CGRectMake(5, 5, self.textView.frame.size.width, 20)];
     self.placeHolderLabel.backgroundColor=[UIColor clearColor];
-    self.placeHolderLabel.text=@"你今天肿么她了";
-    self.placeHolderLabel.textColor=[UIColor grayColor];
+    self.placeHolderLabel.text=@"你今天肿么她了...";
+    self.placeHolderLabel.textColor = [UIColor colorWithWhite:0.8 alpha:0.8];
     if ([XLQUtil isEmptyStr:self.dayData.description]) {
         self.placeHolderLabel.hidden=NO;
     }else{
@@ -75,9 +78,9 @@
 -(UIView *)buildInfoView:(CGRect)frame{
     UIView *headView=[[UIView alloc]initWithFrame:frame];
     headView.backgroundColor=[UIColor clearColor];
-    UILabel *label=[[UILabel alloc]initWithFrame:CGRectMake(5, 0, headView.frame.size.width/2, headView.frame.size.height)];
+    UILabel *label=[[UILabel alloc]initWithFrame:CGRectMake(0, 0, headView.frame.size.width/2, headView.frame.size.height)];
     label.backgroundColor=[UIColor clearColor];
-    label.textColor=[UIColor grayColor];
+    label.textColor=[UIColor colorWithWhite:0.8 alpha:0.8];
     label.text=[NSString stringWithFormat:@"%@：",[XLQUtil stringFromDayData:self.dayData] ];
     [headView addSubview:label];
     

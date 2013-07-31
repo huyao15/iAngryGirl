@@ -29,34 +29,46 @@
 - (void)loadView
 {
     [super loadView];
-    self.view.backgroundColor = [UIColor clearColor];//[UIColor colorWithPatternImage:[XLQUtil getBackGroudImage]];
-    bgImgView = [[UIImageView alloc] initWithFrame:CGRectMake(0,0,deviceWidth,deviceHeight)];
-    [bgImgView setImage:[XLQUtil getBackGroudImage]];
+    self.view.backgroundColor = [UIColor clearColor];
+    bgImgView = [[UIImageView alloc] initWithImage:[XLQUtil getBackGroudImage]];
+    bgImgView.contentMode = UIViewContentModeScaleAspectFill;
+    bgImgView.clipsToBounds = YES;
     
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     [self.tableView setScrollEnabled:NO];
     self.tableView.backgroundView = bgImgView;
+    self.tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 3)];
 
-    [self.navigationController.navigationBar setBarStyle:UIBarStyleBlack];
-//    self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
     self.navigationController.navigationBar.alpha = 0.8;
-    self.navigationController.navigationBar.backgroundColor = [UIColor whiteColor];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"icon_more.png"] style:UIBarButtonItemStyleBordered target:self.viewDeckController action:@selector(toggleLeftView)];
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
+    self.navigationController.navigationBar.backgroundColor = [UIColor colorWithWhite:1 alpha:0.1];
+    
+    UIButton *menuButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 35, 35)];
+    [menuButton setImage:[UIImage imageNamed:@"icon_more.png"] forState:UIControlStateNormal];
+    [menuButton setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.7]];
+    menuButton.layer.masksToBounds = YES;
+    menuButton.layer.cornerRadius = 4;
+    [menuButton addTarget:self.viewDeckController action:@selector(toggleLeftView) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:menuButton];
+    
     self.viewDeckController.delegate=self;
     ((XLQLeftMenuViewController *)self.viewDeckController.leftController).delegate = self;
     self.share = [[UIButton alloc] initWithFrame:CGRectMake(10, self.view.frame.size.height - 90, 300, 40)];
     [self.share setTitle:@"分享到朋友圈" forState:UIControlStateNormal];
-    [self.share setBackgroundColor:[UIColor colorWithWhite:0.5 alpha:0.5]];
+    [self.share setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [self.share setBackgroundColor:[UIColor colorWithWhite:0.75 alpha:0.6]];
     [self.share addTarget:self action:@selector(sendImageContent) forControlEvents:UIControlEventTouchUpInside];
+    self.share.layer.masksToBounds = YES;
+    self.share.layer.cornerRadius = 5;
     [self.view addSubview:self.share];
 
-    self.descText = [[UITextView alloc]initWithFrame:CGRectMake(10, calCellHeight * 5 , deviceWidth - 20, self.share.frame.origin.y - (calCellHeight * 5 + 5))];
+    self.descText = [[UITextView alloc]initWithFrame:CGRectMake(5, calCellHeight * 5 , deviceWidth - 10, self.share.frame.origin.y - (calCellHeight * 5 + 10))];
     self.descText.backgroundColor = [UIColor clearColor];
     self.descText.editable = NO;
     self.descText.font = [UIFont systemFontOfSize:15];
     [self.view addSubview:self.descText];
     self.descText.userInteractionEnabled = YES;
-    self.descText.textColor = [UIColor grayColor];
+    self.descText.textColor = [UIColor colorWithWhite:0.75 alpha:0.6];
     UITapGestureRecognizer *tapGestureTel = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(onClickDescLable)];
     [self.descText addGestureRecognizer:tapGestureTel];
     self.descText.hidden = YES;
@@ -98,7 +110,7 @@
 }
 
 -(void)didChangeBgImg:(UIImage *)image{
-    bgImgView.image = image;
+    [bgImgView setImage:image];
 }
 
 - (void)onClickDescLable

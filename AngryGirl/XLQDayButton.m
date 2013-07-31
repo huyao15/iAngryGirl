@@ -19,10 +19,12 @@
     if (self) {
         self.data = data;
         [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        self.backgroundColor = [UIColor colorWithWhite:0.5 alpha:0.5];
+        self.backgroundColor = [UIColor colorWithWhite:0.75 alpha:0.6];
         [self.titleLabel setTextAlignment:NSTextAlignmentCenter];
         UILabel *titleLable = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 20, 20)];
-        titleLable.textColor = [UIColor blackColor];
+        titleLable.textColor = [UIColor colorWithWhite:0.1 alpha:0.8];
+        titleLable.font = [UIFont systemFontOfSize:10];
+        titleLable.textAlignment = NSTextAlignmentCenter;
         titleLable.text = data.text;
         titleLable.backgroundColor = [UIColor clearColor];
         [self addSubview:titleLable];
@@ -61,16 +63,21 @@
     if (!self.data.canChange) {
         return;
     }
-    [XLQMobClickUtil click:@"set_mood_click"];
-    XLQMood *mood = [XLQMood getMoodByIndex:(self.data.mood.index+1)%[XLQMood getMoodCount]];
-    self.data.mood = mood;
-    self.data.updatedTime = [NSDate date];
-//    [self setBackgroundColor:nil];
-//    [self setTitle:[NSString stringWithFormat:@""] forState:UIControlStateNormal];
-//    [self setBackgroundImage:[UIImage imageNamed:mood.resource] forState:UIControlStateNormal];
-    _moodImg.image=[UIImage imageNamed:mood.resource];
     
-    [XLQMoodDAO saveDB:self.data];
+    if (self.data != lastData) {
+        
+        
+    } else {
+    
+        [XLQMobClickUtil click:@"set_mood_click"];
+        XLQMood *mood = [XLQMood getMoodByIndex:(self.data.mood.index+1)%[XLQMood getMoodCount]];
+        self.data.mood = mood;
+        self.data.updatedTime = [NSDate date];
+        _moodImg.image=[UIImage imageNamed:mood.resource];
+    
+        [XLQMoodDAO saveDB:self.data];
+    }
+    lastData = self.data;
 }
 
 -(BOOL)isFuture:(XLQDayData *)data{

@@ -35,6 +35,7 @@
             UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(57*i+25, 0, 32, moodView.frame.size.height)];
             label.backgroundColor = [UIColor clearColor];
             label.textColor = [UIColor lightTextColor];
+            label.font = [UIFont systemFontOfSize:12];
             label.text = [NSString stringWithFormat:@"X%d", [[self.monthMoods valueForKey:mood_code ]intValue]];
             [moodView addSubview:label];
         }

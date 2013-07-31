@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "XLQDayData.h"
 
+const static XLQDayData *lastData;
 
 @protocol DayButtonClickDelegate <NSObject>
 
