@@ -37,6 +37,9 @@
     [bgImgView setImage:[XLQUtil getBackGroudImage]];
     [bgImgView setContentMode:UIViewContentModeScaleAspectFill];
     [self.view addSubview:bgImgView];
+    UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(0,0,deviceWidth,deviceHeight)];
+    bgView.backgroundColor = [UIColor colorWithWhite:0.1 alpha:0.2];
+    [self.view addSubview:bgView];
     [self.view sendSubviewToBack:bgImgView];
     self.title=@"记录心情";
     
@@ -51,8 +54,9 @@
     
     self.textView=[[UITextView alloc]initWithFrame:CGRectMake(5, headView.frame.size.height + t, deviceWidth-10, 300)];
     self.textView.font=[UIFont systemFontOfSize:18];
-    self.textView.layer.borderColor = [UIColor colorWithWhite:0.8 alpha:0.8].CGColor;
-    self.textView.layer.borderWidth=1;
+    self.textView.textColor = [UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:0.8];
+    //self.textView.layer.borderColor = [UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:0.8].CGColor;
+    //self.textView.layer.borderWidth=1;
     self.textView.text=self.dayData.description;
     self.textView.layer.masksToBounds=YES;
     self.textView.layer.cornerRadius=5;
@@ -63,7 +67,7 @@
     self.placeHolderLabel=[[UILabel alloc]initWithFrame:CGRectMake(5, 5, self.textView.frame.size.width, 20)];
     self.placeHolderLabel.backgroundColor=[UIColor clearColor];
     self.placeHolderLabel.text=@"你今天肿么她了...";
-    self.placeHolderLabel.textColor = [UIColor colorWithWhite:0.8 alpha:0.8];
+    self.placeHolderLabel.textColor = [UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:0.8];
     if ([XLQUtil isEmptyStr:self.dayData.description]) {
         self.placeHolderLabel.hidden=NO;
     }else{
@@ -80,7 +84,7 @@
     headView.backgroundColor=[UIColor clearColor];
     UILabel *label=[[UILabel alloc]initWithFrame:CGRectMake(0, 0, headView.frame.size.width/2, headView.frame.size.height)];
     label.backgroundColor=[UIColor clearColor];
-    label.textColor=[UIColor colorWithWhite:0.8 alpha:0.8];
+    label.textColor=[UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:0.8];
     label.text=[NSString stringWithFormat:@"%@：",[XLQUtil stringFromDayData:self.dayData] ];
     [headView addSubview:label];
     

@@ -64,7 +64,7 @@
         return;
     }
     
-    if (self.data != lastData) {
+    if (self.data != lastData && self.data.mood != [XLQMood UNKNOWN]) {
         
         
     } else {

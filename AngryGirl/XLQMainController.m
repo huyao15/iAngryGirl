@@ -38,6 +38,12 @@
     [self.tableView setScrollEnabled:NO];
     self.tableView.backgroundView = bgImgView;
     self.tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 3)];
+    
+    UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(0,0,deviceWidth,deviceHeight)];
+    bgView.backgroundColor = [UIColor colorWithWhite:0.1 alpha:0.2];
+    bgView.userInteractionEnabled = NO;
+    [self.view addSubview:bgView];
+    [self.view sendSubviewToBack:self.tableView];
 
     self.navigationController.navigationBar.alpha = 0.8;
     self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
@@ -68,7 +74,7 @@
     self.descText.font = [UIFont systemFontOfSize:15];
     [self.view addSubview:self.descText];
     self.descText.userInteractionEnabled = YES;
-    self.descText.textColor = [UIColor colorWithWhite:0.75 alpha:0.6];
+    self.descText.textColor = [UIColor colorWithWhite:0.9 alpha:0.75];
     UITapGestureRecognizer *tapGestureTel = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(onClickDescLable)];
     [self.descText addGestureRecognizer:tapGestureTel];
     self.descText.hidden = YES;
