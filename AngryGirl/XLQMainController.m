@@ -138,10 +138,10 @@
 
     // 发送内容给微信
     WXMediaMessage *message = [WXMediaMessage message];
-    NSLog(@"%d",[image compressedData].length);
-    UIImage *compressedImg = [UIImage imageWithData:[image compressedData]];
-    [message setThumbImage:compressedImg];
-    NSLog(@"%d",UIImageJPEGRepresentation(compressedImg, 1.0).length);
+    UIImage *comImage = [image compressedImage:CGSizeMake(150, 150)];
+    
+    [message setThumbImage:comImage];
+    NSLog(@"%d",UIImageJPEGRepresentation(comImage, 1.0).length);
     
     WXImageObject *ext = [WXImageObject object];
     ext.imageData = UIImageJPEGRepresentation(image, 1.0);
