@@ -34,7 +34,7 @@
 {
     static XLQMood *mood;
     if (mood == nil) {
-        mood = [[XLQMood alloc] init:0 withCode:@"0001" withResource:@"happy.gif"];
+        mood = [[XLQMood alloc] init:0 withCode:@"0001" withResource:@"happy.png"];
     }
     return mood;
 }
@@ -43,7 +43,7 @@
 {
     static XLQMood *mood;
     if (mood == nil) {
-        mood = [[XLQMood alloc] init:1 withCode:@"0002" withResource:@"sad.gif"];
+        mood = [[XLQMood alloc] init:1 withCode:@"0002" withResource:@"sad.png"];
     }
     return mood;
 }
@@ -52,7 +52,7 @@
 {
     static XLQMood *mood;
     if (mood == nil) {
-        mood = [[XLQMood alloc] init:2 withCode:@"0003" withResource:@"angry.gif"];
+        mood = [[XLQMood alloc] init:2 withCode:@"0003" withResource:@"angry.png"];
     }
     return mood;
 }

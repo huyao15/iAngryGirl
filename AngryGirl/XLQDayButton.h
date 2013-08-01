@@ -9,9 +9,24 @@
 #import <UIKit/UIKit.h>
 #import "XLQDayData.h"
 
+const static XLQDayData *lastData;
+
+@protocol DayButtonClickDelegate <NSObject>
+
+-(void)clickedDayButton:(XLQDayData *) dayData;
+
+@end
+
 @interface XLQDayButton : UIButton
 
 @property (strong, nonatomic) XLQDayData *data;
+
+@property (strong, nonatomic) UIImageView *moodImg;
+
+@property (assign,nonatomic) BOOL selected;
+
+@property (weak,nonatomic) id<DayButtonClickDelegate> delegate;
+
 - (id)initWithFrame:(CGRect)frame withData : (XLQDayData *)data;
 
 @end

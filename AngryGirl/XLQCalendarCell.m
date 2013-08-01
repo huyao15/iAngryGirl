@@ -8,35 +8,38 @@
 
 #import "XLQCalendarCell.h"
 #import "XLQWeekButton.h"
-#import "XLQDayButton.h"
 #import "XLQCalendarData.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation XLQCalendarCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier withSection : (int)section;
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier withSection:(int)section withBtnDelegate:(id /*<DayButtonClickDelegate>*/)delegate
 {
-    NSArray *week = [NSArray arrayWithObjects:@"一", @"二", @"三", @"四", @"五", @"六", @"日", nil];
+    //    NSArray *week = [NSArray arrayWithObjects:@"一", @"二", @"三", @"四", @"五", @"六", @"日", nil];
 
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+
     if (self) {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         self.days = [[NSMutableArray alloc] init];
         UIButton *day;
-        for (int i=0; i<7; i++) {
-            int x = 10 + 43 * i;
-            int y = 1;
-            if (section == 0) {
-                NSString *title = [week objectAtIndex:i];
-                day = [[XLQWeekButton alloc] initWithFrame:CGRectMake(x, 10, 42, 25) withTitle:title];
-            } else {
-                XLQDayData *data = [[XLQCalendarData instance] getDayOfMonth:(section-1)*7+i+1 with:i];
-                day = [[XLQDayButton alloc] initWithFrame:CGRectMake(x, y, 42, 42) withData:data];
+
+        for (int i = 0; i <= 6; i++) {
+            int         x = 3 + 45 * i;
+            int         y = 1;
+            XLQDayData  *data = [[XLQCalendarData instance] getDayOfMonth:section * 7 + i + 1 with:i];
+            day = [[XLQDayButton alloc] initWithFrame:CGRectMake(x, y, 44, calCellHeight) withData:data];
+
+            if (delegate) {
+                XLQDayButton *db = ((XLQDayButton *)day);
+                db.delegate = delegate;
             }
-            
+
             [self.days addObject:day];
             [self addSubview:day];
         }
     }
+
     return self;
 }
 

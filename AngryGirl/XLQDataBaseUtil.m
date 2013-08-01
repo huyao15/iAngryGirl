@@ -1,4 +1,4 @@
-//
+
 //  DDDataBaseUtil.m
 //  diandian
 //
@@ -35,6 +35,13 @@ static XLQDataBaseUtil * sharedInstance = nil;
         [dataBaseUtil.dataBase close];
     }
     
+}
+
+-(void)updateTable{
+    BOOL result = [XLQMoodDAO hasColumn:@"description" atTable:@"mood"];
+    if (!result) {
+        [XLQMoodDAO addDescriptionColumn];
+    }
 }
 
 //唯一一次alloc单例，之后均返回nil

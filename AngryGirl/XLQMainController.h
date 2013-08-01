@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "XLQDayButton.h"
+#import "XLQLeftMenuViewController.h"
+#import "IIViewDeckController.h"
 
-@interface XLQMainController : UITableViewController
+@interface XLQMainController : UITableViewController<DayButtonClickDelegate,LeftMenuSelectedDelegate,IIViewDeckControllerDelegate>
 
-@property (strong, nonatomic) UIButton *share;
+@property (strong,nonatomic) UIButton *share;
+
+@property (strong,nonatomic) UITextView *descText;
 
 @end
