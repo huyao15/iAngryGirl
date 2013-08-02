@@ -38,9 +38,6 @@
         } else {
             _moodImg.image = [UIImage imageNamed:self.data.mood.resource];
         }
-        if (self.data.day <= 0) {
-            [self setHidden:YES];
-        }
         self.layer.masksToBounds = YES;
         self.layer.cornerRadius = 5;
         [self addTarget:self action:@selector(onClick) forControlEvents:UIControlEventTouchUpInside];
@@ -52,7 +49,7 @@
 
 -(void)onClick
 {
-    if([self isFuture:self.data]){
+    if([self isFuture:self.data]||self.data.day<=0){
         return;
     }
     XLQDayData *sqlData=[XLQMoodDAO queryWithYear:self.data.year withMonth:self.data.month withDay:self.data.day];

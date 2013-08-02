@@ -49,6 +49,7 @@
 		E720EE7C179DF48C008DBDF8 /* icon_more.png in Resources */ = {isa = PBXBuildFile; fileRef = E720EE7B179DF48C008DBDF8 /* icon_more.png */; };
 		E720EE7F179DFBD4008DBDF8 /* XLQHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = E720EE7E179DFBD4008DBDF8 /* XLQHeadView.m */; };
 		E720EE82179F5799008DBDF8 /* XLQMenuContent.m in Sources */ = {isa = PBXBuildFile; fileRef = E720EE81179F5799008DBDF8 /* XLQMenuContent.m */; };
+		E77BB50B17ABF3A500E71826 /* XLQDateUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = E77BB50A17ABF3A500E71826 /* XLQDateUtil.m */; };
 		E788228D17A4B84C002A04DB /* icon_year.png in Resources */ = {isa = PBXBuildFile; fileRef = E788228C17A4B84C002A04DB /* icon_year.png */; };
 		E788229017A4BB48002A04DB /* XLQLeftMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E788228F17A4BB48002A04DB /* XLQLeftMenuCell.m */; };
 		E788229817A564F8002A04DB /* bg_default.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E788229717A564F8002A04DB /* bg_default.jpg */; };
@@ -138,6 +139,8 @@
 		E720EE7E179DFBD4008DBDF8 /* XLQHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLQHeadView.m; sourceTree = "<group>"; };
 		E720EE80179F5799008DBDF8 /* XLQMenuContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLQMenuContent.h; sourceTree = "<group>"; };
 		E720EE81179F5799008DBDF8 /* XLQMenuContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLQMenuContent.m; sourceTree = "<group>"; };
+		E77BB50917ABF3A500E71826 /* XLQDateUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLQDateUtil.h; sourceTree = "<group>"; };
+		E77BB50A17ABF3A500E71826 /* XLQDateUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLQDateUtil.m; sourceTree = "<group>"; };
 		E788228C17A4B84C002A04DB /* icon_year.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_year.png; sourceTree = "<group>"; };
 		E788228E17A4BB48002A04DB /* XLQLeftMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLQLeftMenuCell.h; sourceTree = "<group>"; };
 		E788228F17A4BB48002A04DB /* XLQLeftMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLQLeftMenuCell.m; sourceTree = "<group>"; };
@@ -387,6 +390,8 @@
 				E7DD668617945CEA003EEFCC /* XLQUtil.m */,
 				E78822AC17A6A26F002A04DB /* UIImage+Compress.h */,
 				E78822AD17A6A26F002A04DB /* UIImage+Compress.m */,
+				E77BB50917ABF3A500E71826 /* XLQDateUtil.h */,
+				E77BB50A17ABF3A500E71826 /* XLQDateUtil.m */,
 			);
 			name = util;
 			sourceTree = "<group>";
@@ -503,6 +508,7 @@
 				E78822AE17A6A26F002A04DB /* UIImage+Compress.m in Sources */,
 				E78822B317A6B292002A04DB /* XLQMessageDialogo.m in Sources */,
 				E78822B417A6B292002A04DB /* MBProgressHUD.m in Sources */,
+				E77BB50B17ABF3A500E71826 /* XLQDateUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -549,7 +555,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "C99D8310-0FF5-435C-AE45-AEC950574AD5";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "FDDBBE0F-18FD-4FD3-84A4-09606A2B53FF";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C99D8310-0FF5-435C-AE45-AEC950574AD5";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -567,7 +573,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: yao hu (KKUB8KB86F)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Yao hu (RE7Q8L2TUG)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: yao hu (KKUB8KB86F)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -576,7 +582,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PROVISIONING_PROFILE = "C99D8310-0FF5-435C-AE45-AEC950574AD5";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "CE8646B4-31B8-4566-8083-98334FB6124C";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C99D8310-0FF5-435C-AE45-AEC950574AD5";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -596,8 +602,8 @@
 					"\"$(SRCROOT)/lib/weixin\"",
 				);
 				PRODUCT_NAME = Angrygirl;
-				PROVISIONING_PROFILE = "D0659DA3-B0AC-4A3D-8902-C6E21BB15B07";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D0659DA3-B0AC-4A3D-8902-C6E21BB15B07";
+				PROVISIONING_PROFILE = "C99D8310-0FF5-435C-AE45-AEC950574AD5";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C99D8310-0FF5-435C-AE45-AEC950574AD5";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -616,8 +622,8 @@
 					"\"$(SRCROOT)/lib/weixin\"",
 				);
 				PRODUCT_NAME = Angrygirl;
-				PROVISIONING_PROFILE = "D0659DA3-B0AC-4A3D-8902-C6E21BB15B07";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D0659DA3-B0AC-4A3D-8902-C6E21BB15B07";
+				PROVISIONING_PROFILE = "C99D8310-0FF5-435C-AE45-AEC950574AD5";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C99D8310-0FF5-435C-AE45-AEC950574AD5";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
