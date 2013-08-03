@@ -7,13 +7,19 @@
 //
 
 #import "XLQMenuContent.h"
+#import "XLQDateUtil.h"
 
 @implementation XLQMenuContent
 
 
 +(NSArray *)usableYears{
     //计算用户可查看的年份
-    return @[@2013];
+    NSDateComponents *comps = [XLQDateUtil compsFromDate:[NSDate date]];
+    NSMutableArray *arr = [[NSMutableArray alloc]init];
+    for (int i=2013;i <= comps.year;i++) {
+        [arr addObject:[NSNumber numberWithInt:i]];
+    }
+    return arr;
 }
 
 +(NSArray *)usableMonthsFromYear:(int)year{

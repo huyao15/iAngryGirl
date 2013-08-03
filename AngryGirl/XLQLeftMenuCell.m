@@ -14,7 +14,7 @@
 -(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier rowAtIndexPath:(NSIndexPath *)indexPath withHeadView:(XLQHeadView *)headView{
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        UILabel *monthLabel = [[UILabel alloc]initWithFrame:CGRectMake(20, 0, 30, self.frame.size.height-5)];
+        UILabel *monthLabel = [[UILabel alloc]initWithFrame:CGRectMake(20, 0, 40, self.frame.size.height-5)];
         NSArray *months=[XLQMenuContent usableMonthsFromYear:headView.year];
         int month=[[months objectAtIndex:indexPath.row] intValue];
         monthLabel.backgroundColor = [UIColor clearColor];

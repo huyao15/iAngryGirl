@@ -13,6 +13,7 @@
 #import "XLQMobClickUtil.h"
 #import "XLQDayDescViewController.h"
 #import "XLQUtil.h"
+#import "XLQDateUtil.h"
 #import <QuartzCore/QuartzCore.h>
 #import "UIImage+Compress.h"
 
@@ -24,6 +25,7 @@
 @implementation XLQMainController {
     XLQDayData *data;
     UIImageView *bgImgView;
+    NSInteger tableSectionNum;
 }
 
 - (void)loadView
@@ -36,6 +38,7 @@
     
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     [self.tableView setScrollEnabled:NO];
+    self.tableView.backgroundColor = [UIColor clearColor];
     self.tableView.backgroundView = bgImgView;
     self.tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 3)];
     
@@ -67,8 +70,8 @@
     self.share.layer.masksToBounds = YES;
     self.share.layer.cornerRadius = 5;
     [self.view addSubview:self.share];
-
-    self.descText = [[UITextView alloc]initWithFrame:CGRectMake(5, calCellHeight * 5 , deviceWidth - 10, self.share.frame.origin.y - (calCellHeight * 5 + 10))];
+    
+    self.descText = [[UITextView alloc]initWithFrame:CGRectZero];
     self.descText.backgroundColor = [UIColor clearColor];
     self.descText.editable = NO;
     self.descText.font = [UIFont systemFontOfSize:15];
@@ -78,6 +81,8 @@
     UITapGestureRecognizer *tapGestureTel = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(onClickDescLable)];
     [self.descText addGestureRecognizer:tapGestureTel];
     self.descText.hidden = YES;
+    [self buildDescTextFrame];
+
 }
 
 - (void)viewDidLoad 
@@ -91,6 +96,12 @@
     [super viewWillAppear:animated];
     self.descText.hidden = YES;
     self.share.hidden = NO;
+}
+
+-(void)buildDescTextFrame{
+    NSDateComponents *com = [[XLQCalendarData instance] components];
+    tableSectionNum = [XLQDateUtil columnFromYear:com.year month:com.month];
+    self.descText.frame = CGRectMake(5, calCellHeight * tableSectionNum , deviceWidth - 10, self.share.frame.origin.y - (calCellHeight * tableSectionNum + 10));
 }
 
 - (void)didReceiveMemoryWarning
@@ -110,7 +121,10 @@
 - (void)didSelectedYear:(NSInteger)year month:(NSInteger)month
 {
     [[XLQCalendarData instance] reLoadDataYear:year month:month];
+    
+    [self buildDescTextFrame];
     self.descText.hidden = YES;
+    
     [self loaddata];
     [self.tableView reloadData];
 }
@@ -205,7 +219,8 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 6;
+    NSDateComponents *com = [[XLQCalendarData instance] components];
+    return [XLQDateUtil columnFromYear:com.year month:com.month];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
