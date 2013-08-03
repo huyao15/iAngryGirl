@@ -159,7 +159,7 @@
 {
     [self.viewDeckController toggleLeftViewAnimated:YES];
     currentRow = indexPath.row;
-    [_tableView reloadData];
+    //[_tableView reloadData];
     XLQHeadView *headView = [self.headViewArray objectAtIndex:indexPath.section];
     NSArray     *months = [XLQMenuContent usableMonthsFromYear:headView.year];
     [self.delegate didSelectedYear:headView.year month:[[months objectAtIndex:indexPath.row] intValue]];

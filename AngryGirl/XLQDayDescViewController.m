@@ -38,7 +38,7 @@
     [bgImgView setContentMode:UIViewContentModeScaleAspectFill];
     [self.view addSubview:bgImgView];
     UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(0,0,deviceWidth,deviceHeight)];
-    bgView.backgroundColor = [UIColor colorWithWhite:0.1 alpha:0.2];
+    bgView.backgroundColor = [UIColor colorWithWhite:0.1 alpha:0.3];
     [self.view addSubview:bgView];
     [self.view sendSubviewToBack:bgImgView];
     self.title=@"记录心情";

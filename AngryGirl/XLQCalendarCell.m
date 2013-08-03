@@ -28,7 +28,7 @@
             int         x = 3 + 45 * i;
             int         y = 1;
             XLQDayData  *data = [[XLQCalendarData instance] getDayOfMonth:section * 7 + i + 1 with:i];
-            NSLog(@"<<<%d,%d,%d,%d,%d>>>",i,x,y,data.day,data.month);
+            //NSLog(@"<<<%d,%d,%d,%d,%d>>>",i,x,y,data.day,data.month);
             day = [[XLQDayButton alloc] initWithFrame:CGRectMake(x, y, 44, calCellHeight) withData:data];
             if (delegate) {
                 XLQDayButton *db = ((XLQDayButton *)day);

@@ -43,7 +43,7 @@
     self.tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 3)];
     
     UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(0,0,deviceWidth,deviceHeight)];
-    bgView.backgroundColor = [UIColor colorWithWhite:0.1 alpha:0.2];
+    bgView.backgroundColor = [UIColor colorWithWhite:0.1 alpha:0.3];
     bgView.userInteractionEnabled = NO;
     [self.view addSubview:bgView];
     [self.view sendSubviewToBack:self.tableView];
@@ -166,11 +166,9 @@
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
 
-    NSLog(@"image:%@", image);
-
     // 发送内容给微信
     WXMediaMessage *message = [WXMediaMessage message];
-    UIImage *comImage = [image compressedImage:CGSizeMake(150, 150)];
+    UIImage *comImage = [image compressedImage:CGSizeMake(250, 250)];
     
     [message setThumbImage:comImage];
     NSLog(@"%d",UIImageJPEGRepresentation(comImage, 1.0).length);
